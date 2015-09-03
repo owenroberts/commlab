@@ -33,11 +33,15 @@ code {
 .slides {
   width: 100%;
   height: 100%;
-  font-size: 20px; }
+  font-size: 28px; }
   .slides h1 {
     margin: 0;
     text-align: center;
     padding: 25%; }
+  .slides h2 {
+    margin: .41em 0; }
+  .slides p {
+    margin: .4em 0; }
   .slides .slide {
     width: 100%;
     height: 100%;
