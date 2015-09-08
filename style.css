@@ -49,5 +49,8 @@ code {
     border-bottom: 1px solid black; }
     .slides .slide img {
       max-width: 80%; }
+img.ph {
+  width:600px;
+}
 
 /*# sourceMappingURL=style.css.map */
