@@ -27,7 +27,7 @@ body, html {
   .outline img {
     max-width: 100%; }
 
-code {
+code, pre {
   color: blue; }
 
 .slides {
@@ -47,10 +47,7 @@ code {
     height: 100%;
     padding: 2%;
     border-bottom: 1px solid black; }
-    .slides .slide img {
-      max-width: 80%; }
-img.ph {
-  width:600px;
-}
+    .slides .slide img.ph {
+      width: 600px; }
 
 /*# sourceMappingURL=style.css.map */

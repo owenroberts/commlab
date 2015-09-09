@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+<head>
+	<title>Comm Lab - Week 1</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="slides.js"></script>
+	<style>
+		.slides .slide {
+			background: linear-gradient(to bottom, #a4cbf2 0%,#afa6ff 77%,purple 100%); /* W3C */
+		}
+	</style>
+</head>
+<body>
+	<div id="container" class="slides">
+		<div class="slide">
+			<h1>CSS Fundamentals</h1>
+		</div>
+
+		<div class="slide">
+			<h2>Class & Id</h2>
+			<p>Along with tag based selectors, CSS rules can be applied by adding a <code>class</code> or <code>id</code> to a tag.  Class and ID work essentially the same way but have different uses and syntax.</p>
+		</div>
+		<div class="slide">
+			<h2>Class</h2>
+			<p>Classes describe a basic set of styles that can be applied multiple tags in an HTML page.  In HTML a class is added to an element with the <strong>class attribute</strong>.</p>
+			<pre class="brush:xml">&lt;div class="content"&gt;&lt;/div&gt;</pre>
+			<p>Classes can be applied to multiple elements in a layout and multiple classes can be applied to one element:</p>
+			<pre class="brush:xml">&lt;div class="content post active"&gt;&lt;/div&gt;
+&lt;div class="content post"&gt;&lt;/div&gt;
+&lt;div class="content post"&gt;&lt;/div&gt;</pre>
+		</div>
+		<div class="slide">
+			<p>IDs can only be used once, on one element:</p>
+			<pre class="brush:xml">&lt;div id="header"&gt;&lt;/div&gt;
+&lt;div id="main"&gt;&lt;/div&gt;</pre>
+			<p>Classes and IDs can be contained in the same div:</p>
+			<pre class="brush:xml">&lt;div id="header" class="content"&gt;&lt;/div&gt;
+&lt;div id="main" class="content post"&gt;&lt;/div&gt;</pre>
+		</div>
+		<div class="slide">
+			<p>In CSS, rules for classes use a period or full stop (<code>.</code>) while IDS use the hashtag (<code>#</code>).</p>
+			<pre class="brush:xml">#header {
+  background-color:gray;
+  font-size:2em;
+  height:60px;
+}
+.content {
+  background-color:lightgray;
+  font-size:1em;
+  width:40px;
+}</pre>
+		</div>
+		<div class="slide">
+			<h2>Nested selectors </h2></strong></p>
+			<p>We can also use the relationships between HTML elements to create styles.  An element that is a child of another element can be selected with a space between two selector tags.  For example, the following HTML:</p>
+			<pre class="brush:xml">&lt;ul&gt;
+  &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+		</div>
+		<div class="slide">
+			<p>Can be styled with the following rules:</p>
+			<pre class="brush:xml">ul {
+  width:200px;
+  height:20px;
+  list-style:none;
+}
+
+ul li {
+  display:inline;
+}
+
+ul li a {
+  color: blue;
+}
+
+ul li a:hover {
+  color:darkblue;
+}</pre>
+		</div>
+		<div class="slide">
+			<p>There are selectors for other relationships beyond the ancestor/parent to descendant/child.  See all of the possibilities for <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors" target="_blank">selectors here</a>.</p>
+		</div>
+		<div class="slide">
+			<h2>Pseudo selectors</h2>
+			<p><code>a:hover { }</code> is a <code>pseudo selector</code>.  Pseudo selectors refer to interactive states that change after the page is loaded.  <code>:hover</code> is when the mouse hovers over an element.</p>
+			<p><code>:visiter</code>, <code>:active</code> and <code>:focus</code> are other common pseudo selectors.</p>
+		</div>
+		<div class="slide">
+			<h1>Color</h1>
+		</div>
+		<div class="slide">
+			<p>Color is subjective and dynamic. Colors signify different meanings to different viewers. Similarly, the way color is displayed physically also changes between mediums. Even with computers, the number of colors, the brightness and the general gamut of color can change from machine to machine.</p>
+			<p>Josef Albers is a great resource for any exploration of color. His <a href="http://books.google.com/books?id=wN9o0OULXjIC&amp;printsec=frontcover#v=onepage&amp;q&amp;f=false" target="_blank"><em>Interaction of Color</em></a> presents the theory that colors relate to one another in a deceptive and elusive logic.</p>
+			<img src="color/albers.jpg" />
+		</div>
+		<div class="slide">
+			<h2>Print vs. screen</h2>
+			<p>One of challenges of designing with a computer is the difference between subtractive and additive color. Screens and devices, which use light to create color, are additive, meaning the combination of all colors creates white, while the absence of color (or light) is black. With print color, the addition of pigment darker colors, while white is the absence of color (pigment). As web designers we basically avoid this problem, because we&#8217;re not concerned with our designs being printed on a physical piece of paper. While print color is based on the CMYK mode, all screens use RGB as a standard. But within that standard there is a lot of variance. Every device supports a slightly different &#8220;gamut&#8221; or range of colors. RGB has a large gamut, but it is not the full spectrum of visible light. RGB can produce millions of colors.</p>
+			<img src="color/gamut.jpg" />
+		</div>
+		<div class="slide">
+			<h2>CSS color values</h2>
+			<p>Hexadecimal values are used to represent web-safe colors. Although most devices can now support millions of colors, using web-safe colors is still considered good practice and requires less download time because the hexadecimal value is a few characters shorter than the RGB value. Here&#8217;s the same color in hexadecimal:</p>
+			<pre>blockquote { color: #5768e5; }</pre>
+			<p>CSS styles can be written using RGB.</p>
+			<pre>blockquote { color: rgb(87, 104, 229); }</pre>
+		</div>
+		<div class="slide">
+			<img width="600px" src="color/rgb.jpg" />
+		</div>
+		<div class="slide">
+			<p>The problem with RGB when it comes to design is that it describes color the way a computer creates it and not the way that we as humans see it. When it comes to design, <strong>HSB (hue, saturation, brightness)</strong>, or <strong>HSL (hue, saturation, lightness)</strong> is a more a intuitive model.</p>
+			<p>In HSL, <strong>hue</strong> is the color value on the color wheel from 0 (red) to 360 (also red), <strong>saturation</strong> is the amount of color from 0% to 100%, meaning 100% will be full color and 0% will be grayscale, and <strong>lightness</strong> from 0% to 100%,  which is the amount of white vs black.</p>
+		</div>
+		<div class="slide">
+			<img width="600px" src="color/hsl.png" />
+		</div>
+		<div class="slide">
+			<p>CSS has introduced <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()" target="_blank">HSL</a> to make writing color rules more intuitive.</p>
+			<pre>blockquote { hsl(233, 73%, 62%)</span>; }</pre>
+		</div>
+		<div class="slide">
+			<p>The color wheel was developed by Johann Itten, who a Swiss painter and theorist who was part of the Bauhaus school.  He had a monk like devotion to work and color.</p>
+			<p><a href="https://www.google.com/search?q=johann+itten&amp;espv=210&amp;es_sm=91&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=8F_6UsPrNImz0QGKpYHoDA&amp;ved=0CAkQ_AUoAQ&amp;biw=1440&amp;bih=783" target="blank">Johann Itten</a></p>
+		</div>
+		<div class="slide">
+			<h2>Color schemes</h2>
+			<p><a href="https://color.adobe.com/create/color-wheel/" target="_blank">Adobe Kuler</a> color scheme designer</p>
+		</div>
+		<div class="slide">
+			<p><strong>Monochromatic</strong>. One hue is chosen, while the brightness and saturation can be varied. This is popular in many comic books and print publications, where using multiple colors can be expensive. I think that creates a retro feel, because we&#8217;re used to seeing it in print.</p>
+			<img src="color/jason.jpg" />
+		</div>
+		<div class="slide">
+			<p><strong>Analogous</strong> color schemes are created by selecting colors that sit next to one another on the color wheel. These tend to have a natural, harmonious feel. Seen in paintings of nature like this Edward Hopper.</p>
+			<img width="600px" src="color/hopper.jpg" />
+		</div>
+		<div class="slide">
+			<p><strong>Complementary</strong> color schemes are popular on the web. In these schemes there is a dominant color and its compliment on the other side of the color wheel.  This creates bold contrasts like in Starry Night by Van Gogh.</p>
+			<img src="color/vangogh.jpg" />
+		</div>
+		<div class="slide">
+			<p><strong>Triadic</strong> schemes use three colors equally distant on the color wheel. They were popular in early comic books that used a lot of basic color to make images and characters pop out of the page.</p>
+			<img src="color/daredevil.jpg" />
+		</div>
+		<div class="slide">
+			<h1>Typography</h1>
+		</div>
+		<div class="slide">
+			<p><iframe src="https://www.youtube.com/embed/wOgIkxAfJsk?rel=0&amp;showinfo=0" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+		</div>
+		<div class="slide">
+			<img src="color/macfonts.png" />
+			<p>We start where this video leaves off, with digital typography.  The image above shows all of the fonts available on the first Apple computer.  One of the ways Apple changed the industry was the introduction of new type faces.</p>
+		</div>
+		<div class="slide">
+			<p>In early 90s, fonts were controlled by browsers, not the authors of web pages. This reflected the top down, information heavy approach of early web architects. Netscape was the first browser to introduce customized fonts with the <code>&lt;font&gt;</code> tag. At this point, the font had to be downloaded by the user&#8217;s computer, or it would default to one of the browser font faces. Later, each new CSS specification introduced wider support for new web fonts.</p>
+		</div>
+		<div class="slide">
+			<p>&#8220;Web-safe&#8221; fonts were the dominant font group for many years. These were fonts that were most likely to be available on any given machine. These included:</p>
+			<p><span style="font-family: Arial;">Arial </span>, <span style="font-family: Courier New;">Courier New</span>, <span style="font-family: Times New Roman;">Times New Roman</span>, <span style="font-family: Comic Sans MS;">Comic Sans MS</span>, <span style="font-family: Impact;">Impact</span>, <span style="font-family: Georgia;">Georgia</span>, <span style="font-family: Trebuchet MS;">Trebuchet MS</span>, <span style="font-family: monospace;">Monospace</span>, <span style="font-family: Verdana;">Verdana</span> and others.</p>
+			<p>The syntax for a CSS font rule looks like this:</p>
+			<pre class="brush:css">font-family: Helvetica, Arial, sans-serif;</pre>
+			<p>This is called a <code>font-stack</code>.  This is used for cases when a particular font is not supported or does not load, there will be a back up font that is closer to the desired font choice.</p>
+		</div>
+		<div class="slide">
+			<p>It&#8217;s usually safest to include only one font family on your web design. There are a lot of examples of sites that break this convention, but the decision has to be specific and considered for it to work. Throwing fonts around the page can quickly make your site look like you copied your code from the 90s. One use of multiple fonts you will see is article that use a specific font for headers while using a more generic font for the body text. This gives you the ability to have a unique feel to your site while maintaining the readability of a font that people are familiar with.</p>
+			<p>New fonts also impact loading times.  The more font you use, the longer it will take your page to render.</p>
+		</div>
+		<div class="slide">
+			<p>To look at new fonts that are available, check out <a href="http://www.google.com/fonts/" target="_blank">Google fonts</a>.  You can also upload font files and <a href="https://css-tricks.com/snippets/css/using-font-face/" target="_blank">use them</a> with the <code>@font-face</code> property.</p>
+			<p><a href="http://webdesign.tutsplus.com/articles/the-anatomy-of-web-typography--webdesign-10533" target="_blank">Font basics tutorial</a></p>
+			<p><a href="http://www.adobe.com/devnet/archive/html5/articles/web-typography-and-css-font-face.html" target="_blank">More on @font-face</a></p>
+			<p><a href="http://webdesign.tutsplus.com/articles/understanding-typographic-hierarchy--webdesign-11636" target="_blank">Typographic hierarchy</a></p>
+		</div>
+		<div class="slide">
+			<h2>Box model</h2>
+			<p>The position, size and layout of HTML elements is determined by the CSS box model, the display property and floats.  Without these rules, HTML pages are rendered in the order of the elements from the top to the bottom.</p> 
+			<img src="color/box.png" />
+		</div>
+		<div class="slide">
+			<p>All block HTML elements can be assigned properties for their <code>border</code>, <code>padding</code> and <code>margin</code>, as well as <code>width</code> and <code>height</code> to describe the dimensions of the content.  (If width and height are not used, the content box will fit the content).  The border can be assigned a color.  The padding takes on the color of the background of the element.  The margin is transparent.  These properties can be assigned values in increments of <strong>pixels</strong>, such as <code>border-width:10px;</code> or <strong>em</strong>, a unit equal to the font-size of the element, such as <code>margin:1em;</code> or <strong>percentages</strong>, based on the width of the element  such as <code>padding: 5%;</code></p>
+			<p>The <code>width</code> and <code>height</code> of each block element can also be set in <code>px</code>, <code>em</code> or <code>%</code>.  HTML elements without width or height properties will expand to fit the content inside of them.</p>
+			<p>The above example shows this rule (highlighted by Google Chrome Inspect Element):</p>
+			<pre><code>p {
+  border:10px solid transparent;
+  margin:10px;
+  padding:10px;
+}</code></pre>
+		</div>
+		<div class="slide">
+			<p>These rules can also be applied to one side of the box, with the following rules:</p>
+			<pre><code>border-top:
+border-bottom:
+border-right:
+border-left:</code></pre>
+			<p>Which can be applied to padding and margin as well.</p>
+			<p>The side can also be combined into one rule.  <code>margin: 1em;</code> will apply a 1em margin to each side.  <code>margin: 1em 0;</code> will apply a 1em margin to the top and bottom and a 0 margin to the right and left sides.  Using four numbers, we can apply in this order- top, right, bottom, left (clockwise around the circle), so, <code>margin: 1em 0 10px 5px;</code> is equivalent to:</p>
+			<pre><code>margin-top:1em;
+margin-right:0;
+margin-bottom:10px;
+margin-left:5px;</code></pre>
+			<p>Other properties include <code>auto</code>, which will attempt to fill the space between an element and its parent, <code>inherit</code>, which will inherit the rule from the parent element, and initial, which will set it to the <code>initial</code> property of the element tag name.</p>
+		</div>
+		<div class="slide">
+			<h2>Display property</h2>
+			<p>The <code>display</code> property determines the horizontal space of each element.  Elements <code>with display: block;</code> will take up the entire width of the page, their own &#8220;block&#8221;.  Block elements can be assigned box model properties.  Inline elements can not.  Elements that default to block display include <code>h1-h6, div, ul, li, p</code> and others.  Default inline elements include <code>span, em, strong</code> and <code>a</code>.</p>
+		</div>
+		<div class="slide">
+			<img src="color/block.png" />
+			<p>Block display.</p>
+		</div>
+		<div class="slide">
+			<img src="color/inline.png" />
+			<p>Inline display.</p>
+		</div>
+		<div class="slide">
+			<p>Elements can also be set to <code>display: none;</code> which makes them not appear in the layout.  This has advantages that we&#8217;ll look at next class in combination with <strong>pseudo tags</strong>.  There are also hybrid elements like <code>inline-block</code>, which allows an inline element to be given padding, margin and border, as well as width and height.</p>
+		</div>
+		<div class="slide">
+			<h2>Positions</h2>
+			<p>Before going into positions, we should introduce the div HTML tag: <code>&lt;div&gt;</code>.  This stands for <code>division</code>.  It is a generic HTML element used for creating divisions of content.  They default to block display.  They can be used to organize different sections of content on an HTML page.</p>
+		</div>
+		<div class="slide">
+			<p>CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">positions</a> determine how elements fit into the flow of an HTML page.</p>
+			<p>All elements default to <code>position: static;</code> meaning they stay in the vertical flow on an HTML page and cannot be offset.</p>
+			<img src="color/divstatic.png" />
+		</div>
+		<div class="slide">
+			<p>Changing an element to <code>position: relative;</code> means that the element will stay in the normal flow of the HTML page, but we now have access to offsets, properties which allow us to position the element certain distances on the <code>top, right, left</code> and <code>bottom</code> of the element.</p>
+			<img src="color/divrel.png" />
+		</div>
+		<div class="slide">
+			<p><code>position:absolute;</code> takes the element out of the normal flow and places it relative to the parent container, but only if that parent container is <code>position: relative;</code></p>
+			<p>In this case, the parent container is the <code>&lt;body&gt;</code></p>
+			<img src="color/divabs.png" />
+			<p>Notice that Div 2 is no longer in order with the rest of the elements.</p>
+		</div>
+		<div class="slide">
+			<p>Using <code>position: fixed;</code> will place the element relative to the window regardless of any other element.  For example, any fixed navigation window is using a <code>position:fixed;</code> element, <a href="http://www.sagmeisterwalsh.com/work/" target="_blank">like this example.</a></p>
+		</div>
+		<div class="slide">
+			<p>When using positions like relative, absolute and fixed, we also have access to the <code>z-index</code> property, which determines the order the elements are rendered on the screen, like layers in Photoshop.  An element with a lower z-index property will appear behind an element with a higher z-index property.  <code>z-index</code> can range from -9999 to 9999.</p>
+			<img src="color/z-index.png" />
+		</div>
+		<div class="slide">
+			<h2>Float</h2>
+			<p>Sometimes you want to take an element out of the flow of the HTML page without changing the basic position.  To do this you can use the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float" target="_blank">float</a> property.  If we apply <code>float: left;</code> or <code>float: right;</code> to an element, it will float as far as possible to the left or right side of the element it is contained inside.  If you apply float to multiple elements they will float in order to either side.  To stop floating, use <code>clear: left;</code> or <code>clear: right;</code> or <code>clear: both;</code></p>
+			<img src="color/floatleft.png" />
+		</div>
+		<div class="slide">
+			<img src="color/floatright.png" />
+			<img src="color/floatclear.png" />
+		</div>
+		<div class="slide">
+			<p>Other content will wrap around the float:</p>
+			<img src="color/floats.png" />
+		</div>
+		<div class="slide">
+			<h2>Transition and animation</h2>
+			<p>CSS3 has introduced experimental features which have gained near universal support for doing simple animations and transition with CSS, which used to only be available with JavaScript.</p>
+			<pre>a:hover { transition: color 1s ease-in-out; }</pre>
+			<p>Animations use the same transition syntax with keyframes.</p>
+			<li><a href="http://css3.bradshawenterprises.com/transitions/" target="blank">Transitions</a></li>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations" target="blank">Animations</a></li>
+		</div>
+
+	</div>
+</body>
+</html>
