@@ -182,11 +182,15 @@ ul li a:hover {
 		</div>
 		<div class="slide">
 			<h2>Box model</h2>
-			<p>The position, size and layout of HTML elements is determined by the CSS box model, the display property and floats.  Without these rules, HTML pages are rendered in the order of the elements from the top to the bottom.</p> 
+			<p>The position, size and layout of HTML elements is determined by the CSS box model, the display property and floats.  Without these rules, HTML pages are rendered in the order of the elements from the top to the bottom.</p>
+		</div>
+		<div class="slide">
 			<img src="color/box.png" />
 		</div>
 		<div class="slide">
 			<p>All block HTML elements can be assigned properties for their <code>border</code>, <code>padding</code> and <code>margin</code>, as well as <code>width</code> and <code>height</code> to describe the dimensions of the content.  (If width and height are not used, the content box will fit the content).  The border can be assigned a color.  The padding takes on the color of the background of the element.  The margin is transparent.  These properties can be assigned values in increments of <strong>pixels</strong>, such as <code>border-width:10px;</code> or <strong>em</strong>, a unit equal to the font-size of the element, such as <code>margin:1em;</code> or <strong>percentages</strong>, based on the width of the element  such as <code>padding: 5%;</code></p>
+		</div>
+		<div class="slide">
 			<p>The <code>width</code> and <code>height</code> of each block element can also be set in <code>px</code>, <code>em</code> or <code>%</code>.  HTML elements without width or height properties will expand to fit the content inside of them.</p>
 			<p>The above example shows this rule (highlighted by Google Chrome Inspect Element):</p>
 			<pre><code>p {
@@ -207,6 +211,8 @@ border-left:</code></pre>
 margin-right:0;
 margin-bottom:10px;
 margin-left:5px;</code></pre>
+		</div>
+		<div class="slide">
 			<p>Other properties include <code>auto</code>, which will attempt to fill the space between an element and its parent, <code>inherit</code>, which will inherit the rule from the parent element, and initial, which will set it to the <code>initial</code> property of the element tag name.</p>
 		</div>
 		<div class="slide">
@@ -253,10 +259,14 @@ margin-left:5px;</code></pre>
 		<div class="slide">
 			<h2>Float</h2>
 			<p>Sometimes you want to take an element out of the flow of the HTML page without changing the basic position.  To do this you can use the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float" target="_blank">float</a> property.  If we apply <code>float: left;</code> or <code>float: right;</code> to an element, it will float as far as possible to the left or right side of the element it is contained inside.  If you apply float to multiple elements they will float in order to either side.  To stop floating, use <code>clear: left;</code> or <code>clear: right;</code> or <code>clear: both;</code></p>
+		</div>
+		<div class="slide">
 			<img src="color/floatleft.png" />
 		</div>
 		<div class="slide">
 			<img src="color/floatright.png" />
+		</div>
+		<div class="slide">
 			<img src="color/floatclear.png" />
 		</div>
 		<div class="slide">
