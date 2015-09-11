@@ -137,21 +137,22 @@
 			<h2>Cyberduck</h2>
 			<p>We will use Cyberduck to upload our files to our shared server.</p>
 			<p>Download: <a href="https://cyberduck.io/?l=en" target="blank">https://cyberduck.io/?l=en</a></p>
-			<p>Once you have installed Cyberduck, download this file and double click it in your Downloads folder.  It will create a new connection in Cyberduck.  We are all sharing the same account this semester, so I will share the password in class.  Please write it down but do not spread it outside of class.</p>
-			<p><a href="http://comlab.nyu.sh/uploads/week1/archive.zip" target="blank">Cyberduck Info</a></p>
-			<p>After you enter the password and hit Connect, you will most likely see a dialog warning that says "Unsecured Connection".  If you are on campus, you are on a secure connection and should choose "Continue".  Otherwise you will not be able to login.  Once you click Continue, click continue on the next dialog box and you will log on.</p>
-			<p>Once you log onto Cyberduck you will see a directory structure very similar to what you see in the Mac's Finder.  There are two folders for the two sections of Comm Lab.  The 11:15 - 12:30 section will use the 13214 folder and the 3:15 - 4:30 section will use the 19070 folder.</p>
-			<p>Please create a folder with your preferred name before class on Thursday.  For example, my folder would be "owenroberts".</p>
-			<p>Web assignments will be uploaded to this server.  Your personal folder should look silimar or identical to your local folders and files on your computer for your web assignments.</p>
-		</div>
-		<div class="slide">
+			<p>Once it is downloaded, move Cyberduck to your Applications folder (for OSX, not sure about PC...) and open it.  Click the "Open Connection" icon with the globe.</p>
+			<p>Change the connection to <code>SFTP</code> using the first dropdown menu.</p>
+			<p>Our server is being hosted internally on campus at this server address: <code>192.168.50.184</code>
+			<p>Your username is your NYU email handle, for example, mine is <code>obr208</code>.</p>
+			<p>Your password was emailed to you.</p>
 			<img src="week1/duck0.png" />
-		</div>
-		<div class="slide">
-			<img src="week1/change.png" />
-		</div>
-		<div class="slide">
-			<img src="week1/duck.png" />
+			<p>You may see a warning saying "Unknown fingerprint", click "Allow".</p>
+			<p>Once logged in you will see a directory structure similar to this:</p>
+			<img src="week1/duck1.png" />
+			<p>The <code>www</code> folder is your public folder, it is what will be requested when a browser is directed to the URL for your server space.  Your projects go here.</p>
+			<p>Your URL is the server, your folder, and then whatever you called your assignments.  My week1 example will appear at the URL <code>192.168.50.184/~obr208/week1/</code> (Don't forget the tilde (~)).
+			<p>Cyberduck is pretty unstable in my experience.  If something seems like its taking too long or not working, try quitting the program and restarting before doing any other trouble shooting.   This seems to fix 90% of problems.</p>
+			<p>After your first login you should be able to find your server info in the history tab on Cyberduck, so you can use this to login without re-entering your information:</p>
+			<img src="week1/duck2.png" />
+			<p>Web assignments will be uploaded to this server.  Your personal folder should look silimar or identical to your local folders and files on your computer for your web assignments.</p>
+			<p>Keep in mind that the URL for each assignment should be added to the documentation blog.</p>
 		</div>
 
 	</div>
