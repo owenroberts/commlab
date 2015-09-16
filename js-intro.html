@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+<head>
+	<title>Comm Lab - Week 3</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="slides.js"></script>
+	<style>
+		.slides .slide {
+			background: linear-gradient(to bottom, #a4cbf2 0%,#afa6ff 77%,lavender 100%); /* W3C */
+		}
+	</style>
+</head>
+<body>
+	<div id="container" class="slides">
+		<div class="slide">
+			<h1>Introduction to JavaScript</h1>
+		</div>
+
+		<!--  what is javascript -->
+		<div class="slide">
+			<p>JavaScript is a scripting language, a lightweight programming language, specifically designed for programming the elements of web pages. Today we are going to look at some basic concepts in JavaScript and computer science in general which will allow us to interact with the browser and begin making dynamic designs. When we talk about dynamic design we mean making a design which changes given various inputs and interactions. The power of writing code is that we can build designs that react and change to various input, whether it is time, user interaction, data or other sources.</p>
+		</div>
+
+		<div class="slide">
+			<p>First, an introduction by Douglas Crockford, a well known JavaScript architect and text book writer.  We'll start this but I recommend watching the rest on your own.</p>
+			<iframe width="560" height="315" src="http://www.youtube.com/embed/RO1Wnu-xKoY?rel=0" frameborder="0" allowfullscreen=""></iframe>
+		</div>
+
+		<div class="slide">
+			<p>Let's go ahead and open the JavaScript console (in Google Chrome).</p>
+			<div class="key">CAj</div>
+			<p>We're going to add a series of commands and see what happens.</p>
+		</div>
+
+		<div class="slide">
+			<p>Start by typing <code>> document</code> into the console.</p>
+			<p>Look familiar?  This is our HTML document, interpreted as a node structure by the Document Object Model.</p>
+		</div>
+
+		<!--  writing stuff to dom / what is the dom? -->
+		<div class="slide">
+			<p>Quick aside: What is the document object model?</p>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="blank">DOM</a></li>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples" target="blank">DOM Examples</a></li>
+		</div>
+
+		<div class="slide">
+			<p>Okay, let's try a couple more lines: <code>> document.body</code></p>
+			<p><code>> document.body.style</code></p>
+			<p><code>> document.body.style.color = "purple";</code></p>
+			<p>
+		</div>
+
+		<div class="slide">
+			<p>Try this: <code>> document.write("Hello world!");</code></p>
+		</div>
+		<div class="slide">
+			<p>Oops!</p>
+			<p>We could write our entire HTML document this way, but its easier to write some HTML and then modify it with JavaScript.</p>
+			<p><code>> var elem = document.createElement("h1");</code></p>
+			<p><code>> elem.innerHTML = "JavaScript is kewl!";</code></p>
+			<p><code>> document.body.appendChild(elem);</code></p>
+		</div>
+
+		<!--  variables, how js treats numbers, strings booleans -->
+		<div class="slide">
+			<p>But wait, what is that <code>var</code> thing, and what are those functions??</p>
+			<p>In Javascript, every variable is declared as <code>var</code>, unlike Processing or other languages you have probably seen things like <code>int</code> or <code>string</code>.  JavaScript only works with a few basic variable types: numbers, strings and booleans (along with arrays and objects and functions, which can all be declared with var. Its confusing and we'll get into it next week).</p>
+			<p>Variables in JavaScript are more easily converted into each other.  This is called type coercion and we'll talk about that more next week as well.</p>
+			<p>For now, let's write some variables and then keep going.</p>
+			<p><a href="var https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var" target="blank">var on MDN</a></p>
+		</div>
+
+		<div class="slide">
+			<p><code>> var x</code></p>
+			<p>(Oh, also, semicolons are "optional in JavaScript", but it's usually better to use them.)</p>
+			<p><code>> x = 10;</code></p>
+			<p><code>> x++;</code> (Hmm... trype <code>x</code> again)</p> 
+			<p><code>> x += 10;</code></p>
+			<p><code>> x = x + 10;</code></p>
+			<p><code>> x = "ten";</code></p>
+			<p><code>> x = "10";</code></p>
+			<p><code>> x++;</code> (er... trype <code>x</code> again)</p> 
+			<p><code>> x = false;</code></p>
+			<p><code>> typeof x;</code></p>
+		</div>
+
+		<div class="slide">
+			<p>Okay, that was weird...</p>
+			<p>But actually, very useful in someways and of course easy to write!</p>
+			<p>Tricky, but useful...</p>
+		</div>
+
+		<div class="slide">
+			<p>Anyway, what we want to look at today is events, so let's write some events.</p>
+			<p>Events in JavaScript are functions that react to interactions with the browser, such as user clicks, document loading and window scrolling. There are events for virtually everything you can think of.</p>
+		</div>
+
+		<div class="slide">
+			<button id="alert">My id is "alert"!</button>
+			<p><code>> document.querySelector("#alert");</code></p>
+			<p><code>> var btn = document.querySelector("#alert");</code></p>
+			<p><pre>> btn.onclick = function() {
+  alert("Hello World!");
+}</pre>
+		</div>
+
+		<div class="slide">
+			<p>Events are part of the web api for interacting with web pages.  Here's a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event" target="blank">list of events</a>.</p>
+			<p>In JavaScript, we can use <code>event handlers</code> or <code>event listeners</code> to detect events and then execute some commands based on data extracted from the events.</p>
+			<p><code>onclick</code> is a short hand function for a click event.  The long version looks like this:</p>
+			<pre>btn.addEventListener('click', function() { 
+	alert('click'); 
+});</pre>
+		</div>
+
+		<div class="slide">
+			<p>So this is cool, but we need to be able to actually write JavaScript into our HTML pages, right?  It's not that useful to write into the JavaScript console unless you're testing or debugging your already existing code.</p>
+			<p>Like CSS, we can add JavaScript to elements with an inline attribute, or to a document with an internal <code>&lt;script></code> element, or to multiple documents with an external <code>&lt;script></code> tag.</p>
+		</div>
+
+		<div class="slide">
+			<p>Inline:</p>
+			<pre class="wrap">&lt;button onclick='alert("I am a button");'>Click me!&lt;/button></pre>
+			<button onclick='alert("I am a button");'>Click me!</button>
+		</div>
+
+		<div class="slide">
+			<p>Internal tag</p>
+			<pre class="wrap">&lt;script type="text/javascript">
+	var btn = document.querySelector('#confirm');
+	btn.onclick = function() {
+		var c = confirm("Does this make sense?");
+		if (c) alert("Great!");
+		else alert("Oh well...");
+}
+&lt;script></pre>
+			
+			<button id="confirm">Does this make sense?</button>
+			<script>
+				var btn = document.querySelector('#confirm');
+				btn.onclick = function(ev) {
+					var c = confirm("Does this make sense?");
+					if (c) alert("Great!");
+					else alert("Oh well...");
+				}	
+			</script>
+		</div>
+		
+		<div class="slide">
+			<p>An external script tag looks similar, but has a <code>src</code> attribute, like an image, to a document that contains the javascript:</p>
+			<pre>&lt;script type="text/javascript" src="my-app.js">&lt;/script></pre>
+			<p><code>my-app.js</code> just has the JavaScript:</p>
+			<pre class="wrap">var btn = document.querySelector('#prompt');
+var parent = btn.parentElement;
+btn.onclick = function() {
+	var response = prompt("Where are you from?");
+	var r = document.createElement("p");
+	r.innerHTML = response;
+	parent.insertBefore(r, btn);
+}</pre>
+			<button id="prompt">Where are you from?</button>
+			<script>
+				var btn = document.querySelector('#prompt');
+				var parent = btn.parentElement;
+				btn.onclick = function() {
+					var response = prompt("Where are you from?");
+					var r = document.createElement("p");
+					r.innerHTML = response;
+					parent.insertBefore(r, btn);
+				}
+			</script>
+
+		</div>
+
+		<div class="slide">
+			<h2>console.log</h2>
+			<p><code>console.log()</code> in JavaScript is like <code>println</code> in Processing.  Like all languages, we need a way to print things to the console to see what works and doesn't it.  It's extremely useful and easy to use, but you have to remember to be specific.  You can put pretty much anything in the argument parentheses for <code>console.log()</code>, so make sure it's something useful, like an element, a variable, or something else that you want to be able to read.  This is a good way to read data from various events.</p>
+			<pre class="wrap">> document.body.onclick = function(ev) { console.log(ev); };</pre>
+		</div>
+
+	</div>
+</body>

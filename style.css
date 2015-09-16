@@ -1,3 +1,4 @@
+@import url(font.css);
 body {
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.45; }
@@ -29,6 +30,9 @@ body, html {
 
 code, pre {
   color: blue; }
+
+.wrap {
+  white-space: pre-wrap; }
 
 .slides {
   width: 100%;
