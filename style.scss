@@ -63,8 +63,17 @@ code, pre {
 		height:100%;
 		padding:2%;
 		border-bottom:1px solid black;
+		img {
+			max-height: 90%;
+		}
 		img.ph {
 			width:600px;
+		}
+		blockquote {
+			background: rgba(lightgray, 0.7);
+			padding: 1em;
+			border-radius: 0.5em;
+
 		}
 	}
 }

@@ -51,7 +51,13 @@ code, pre {
     height: 100%;
     padding: 2%;
     border-bottom: 1px solid black; }
+    .slides .slide img {
+      max-height: 90%; }
     .slides .slide img.ph {
       width: 600px; }
+    .slides .slide blockquote {
+      background: rgba(211, 211, 211, 0.7);
+      padding: 1em;
+      border-radius: 0.5em; }
 
 /*# sourceMappingURL=style.css.map */
