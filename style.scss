@@ -38,6 +38,9 @@ body, html {
 code, pre {
 	color:blue;
 }
+a, a:visited {
+	color: darkblue;
+}
 
 .wrap {
 	white-space: pre-wrap;
@@ -47,6 +50,7 @@ code, pre {
 	width:100%;
 	height:100%;
 	font-size: 28px;
+	color:white;
 	
 	h1 {
 		margin:0;
