@@ -28,11 +28,17 @@ body, html {
   .outline img {
     max-width: 100%; }
 
-code, pre {
+code, pre, .note {
   color: blue; }
 
 a, a:visited {
-  color: darkblue; }
+  color: darkblue;
+  text-decoration: none;
+  transition: color 100ms;
+  border-bottom: 0.1em dashed; }
+
+a:hover {
+  color: pink; }
 
 .wrap {
   white-space: pre-wrap; }

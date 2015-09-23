@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+	<title>Comm Lab - Week 4</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="slides.js"></script>
+	<style>
+		.slides .slide {
+			background: linear-gradient(to bottom, #a4cbf2 0%,#afa6ff 77%,lavender 100%); /* W3C */
+		}
+	</style>
+</head>
+<body>
+	<div id="container" class="slides">
+		<div class="slide">
+			<h1>JavaScript: Logic & Loops + jQuery</h1>
+		</div>
+
+		<div class="slide">
+			<h2>Logic</h2>
+      		<p>Conditional statements are actions that are executed if a tested condition is true.  JavaScript uses two formats for conditional statements: <code>if ... else</code> and <code>switch</code>.  Here's an example of a conditional statement:</p>
+      	</div>
+
+		<div class="slide">
+			<p id="if">Input 1 for red and 2 for blue.</p>
+			<button onclick="input();">Input.</button>
+     		<pre><code>function input() {
+    var color = prompt("Input 1 or 2");
+    var elem = document.getElementById('if');
+    if (color == 1) {
+      elem.style.background = "red";
+    } else if (color == 2) {
+      elem.style.background = "blue";           
+    }
+}</code></pre>
+		</div>
+		<div class="slide">
+			<p>If the user inputs 1, the first condition will be true.  If the user inputs 2 the second condition will be true.  Otherwise no condition will be satisfied and nothing will happen.  <code>else if</code> could be changed to <code>else</code> which would execute as long as the first condition doesn't evaluate to true.  You can nest conditional statements and test for as many conditions as desired.</p>
+		</div>
+		<div class="slide">
+      		<p>Last time we looked at booleans.  The values that will evaluate to false are: <code>false</code>, <code>undefined</code>, <code>null</code>, <code>0</code>, <code>NaN</code> and empty string, <code>""</code>.  Most other values will evaluate to true.</p>
+       		<p>JavaScript uses the <code>==</code> to determine if values are equivalent, resulting in an evaluation of true of false.  The <code>!=</code> operator returns true if two values are not equivalent, or <code>!</code> before a value to indicate the opposite, ie: <code>!true</code> is false.  <code>==</code> ignores data type, so 7 will be equal to "7".  The <code>===</code> sign evaluates value and data type, so <code>7 === "7"</code> will return false.</p> 
+       		<p>There are a number of logical statements that help us evaluate more complex statements.  We can use <code>&&</code> and <code>||</code> to add statements to our condition.  <code>&&</code> requires all statements to evaluate true, reading left to right.  <code>||</code> requires one of the statements on either side to be true.</p>
+       	</div>
+       	<div class="slide">
+	        <pre><code>> true && false</code></pre>
+	        <pre><code>> 7 == "7" && NaN != 1</code></pre>
+	        <pre><code>> false || true</code></pre>
+	        <pre><code>> 7 === "7" || 1 == 1 && !(false)</code></pre>
+	        <p>We can also uses parathesis <code>()</code> to nest logic rules.</p>
+	        <pre><code>> ( true && true || false ) && true</code></pre>
+        </div> 
+        
+        <div class="slide">
+       		<p><code>switch</code> statements evaluates an expression and matches that with a series of cases to determine which action to perform.</p>
+       	</div>
+       	<div class="slide">
+       		<p id="switch">Enter a number between 1 and 3.<br>
+          	<button onclick="switchColor();">Enter.</button></p>
+        	<pre><code>function switchColor() {
+  var s = prompt('Input number.');
+  var p = document.getElementById('switch');
+  switch (s) {
+    case "1":
+      p.style.color = "blue";
+      p.style.background = "lightblue";
+      break;
+    case "2":
+      p.style.color = "green";
+      p.style.background = "lightgreen";
+      p.style.fontSize = "100px";
+      break;
+    case "3":
+      p.style.fontSize = "9px";
+      p.style.background = "purple";      
+  }
+}</code></pre>
+        </div>
+		<div class="slide">
+		</div>
+
+
+		
+		<div class="slide">
+			 <h2>Loops</h2>
+        	<p>A loop is a set of commands that is executed repeatedly until a condition changes.  JavaScript uses several loops statements.  We will most often use the <code>for</code> loop.</p>
+        </div>
+
+        <div class="slide">
+        	<pre><code>> for (var i = 0; i < 5; i++) {
+  console.log("This is the " + i + " loop.");
+}</code></pre>
+        </div>
+        <div class="slide">
+       		<p>The <code>for</code> keyword indicates the beginning of the for loop.  Inside the parentheses there are three statements that control the duration of the loop.  The first statement establishes the initial condition: <code>var i = 0;</code>.  The second statement establishes the end condition: <code>i < 5;</code>.  As long as this condition evaluates to <code>true</code>, the loop will continue.  The final statement executes at the end of each loop to change the condition: <code>i++;</code>.  The code block for the loop is then contained in the curly brackets: <code>{ ... }</code>.</p>
+        
+        	<p>This is essentially like copying and pasting the same piece of code five times, while changing a number or input.  Loops are an efficient way to excecute actions on a list or array of data.</p>
+        </div>
+
+        <div class="slide">
+        	<pre><code>> var imgs = ["cat.jpg", "dog.jpg", "bird.jpg"];
+> for (var i = 0, len = imgs.length; i < len; i++) { 
+  console.log('&#60;img src="'+imgs[i]+'"&#62;');
+}</code></pre>
+        </div>
+        <div class="slide">
+       		<p>A <code>do ... while</code> statement repeats until a condition evaluates to false.</p>
+       	</div>
+       	<div class="slide">
+        	<pre class="block"><code>> i = 0;
+> do {
+  i += 1;
+  console.log(i);
+} while (i < 10);</code></pre>
+        </div>
+        <div class="slide">
+        	<p>A <code>while</code> statements executes as long as the first statement is true.</p>
+        </div>
+        <div class="slide">
+        	<pre class="block"><code>> i = 0;
+> while (i < 5) {
+  i++;
+  console.log("Loop " + i);
+}</code></pre>
+		</div>
+		<div class="slide">
+			<h2>jQuery</h2>
+		</div>
+
+		<div class="slide">
+			<p>jQuery is a JavaScript library that simplifies scripting for HTML pages using DOM element selectors and a set of animations, transitions and other manipulations based on CSS and HTML. jQuery was released in 2006 and has become extremely popular in front end web development. One of the features of jQuery is that it is compatible with all major browsers.</p>
+		</div>
+		<div class="slide">
+			<p>You can <a href="http://jquery.com/download/" target="blank">download jQuery</a> from their site and attach the file to your HTML pages with a script tag.</p>
+			<p>Google also hosts versions of jQuery and other libraries that can be added with a script tag <a href="https://developers.google.com/speed/libraries/?hl=en#jquery" target="blank">found here</a>.</p>
+			<pre style="font-size:18px">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"&gt;
+&lt;/script&gt;</pre>
+			<p>For your JavaScript to use the jQuery object, it must come after jQuery is loaded into your document.</p>
+		</div>
+		<div class="slide">
+			<p>jQuery uses a $ to define and access the library. The basic syntax of a jQuery function looks like this: <code>$('selector').action()</code>. </p>
+			<p>Like in CSS, the selector refers to an HTML element. The action refers to the script that will be executed on that element.</p>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="wKzKxO" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/wKzKxO/'>wKzKxO</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<h2><code id="this">this</code></h2>
+			<p>This is a special keyword used in JavaScript (as well as other languages) to refer to the current object.</p>
+			<pre>$('#this').on('click', function() {
+  console.log(this);
+  console.log(this.innerHTML);
+});</pre>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="ojzbvd" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/ojzbvd/'>ojzbvd</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="merezG" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/merezG/'>merezG</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		
+
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="NGRxGP" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/NGRxGP/'>NGRxGP</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="rOMxOm" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/rOMxOm/'>rOMxOm</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="LpRGpm" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/LpRGpm/'>LpRGpm</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="KdgVzM" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/KdgVzM/'>KdgVzM</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="LpRGNr" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/LpRGNr/'>LpRGNr</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="LpRGNr" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/LpRGNr/'>LpRGNr</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="PPGZGM" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/PPGZGM/'>PPGZGM</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="bVwEgd" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/bVwEgd/'>bVwEgd</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="xwEwML" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/xwEwML/'>xwEwML</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+
+		<div class="slide">
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow and error handling on MDN</a></li>
+		</div>
+	</div>
+</body>
+</html>

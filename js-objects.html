@@ -15,7 +15,7 @@
 <body>
 	<div id="container" class="slides">
 		<div class="slide">
-			<h1>JavaScript: Objects & jQuery</h1>
+			<h1>JavaScript: Objects</h1>
 		</div>
 		<div class="slide">
 			<blockquote>JavaScript is designed on a simple object-based paradigm. An object is a collection of properties, and a property is an association between a name (or key) and a value. A property's value can be a function, in which case the property is known as a method. In addition to objects that are predefined in the browser, you can define your own objects. </blockquote>
@@ -48,14 +48,6 @@
 			<p>Once we have objects we need ways to efficiently use their data.</p>
 		</div>
 		<div class="slide">
-			<p><code>for ... in</code> is a for loop that will iterate over all of the keys in an object.</p>
-			<pre>>for (var prop in train) {
-	console.log(prop);
-	console.log(train[prop]);
-}</pre>
-
-		</div>
-		<div class="slide">
 			<p>Another, somewhat more efficient way to create an object is with object notation:</p>
 			<pre>> var yetAnotherTrain = {
   color:"purple",
@@ -64,8 +56,48 @@
   numPassengers: 300
 };</pre>
 		</div>
+		<div class="slide">
+			<p><code>for ... in</code> is a for loop that will iterate over all of the keys in an object.</p>
+			<pre>> for (var prop in train) {
+  console.log(prop);
+  console.log(train[prop]);
+}</pre>
+
+		</div>
 
 		<div class="slide">
+			<p>If we want to reuse the basic structure of an object we can use a constructor function.  JavaScript has some prebuilt constructor functions like <code>Math</code>.</p>
+			<p>Objects in JavaScript are like Classes in Processing.  They can be assigned properties and methods and extended in other objects. For example: </p>
+			<pre>Math.randomInt = function(n) {
+  return Math.floor(Math.random() * n);
+};</pre>
+		</div>
+
+		<div class="slide">
+			<pre>function Train(color, line, speed, numPassengers) {
+  this.color = color;
+  this.line = line;
+  this.speed = speed;
+  this.numPassengers = numPassengers;
+}</pre>
+		</div>
+
+		<div class="slide">
+			<pre>var lineOne = new Train("yellow", 1, 50, 100);</pre>
+			<pre>var lineTwo = new Train("blue", 2, 60, 80);</pre>
+		</div>
+
+
+		<div class="slide">
+			<p>We can extend constructor functions by using the <code>prototype</code> property.</p>
+			<pre>Train.prototype.getSpeed = function() {
+	return this.speed;
+};</pre>
+		</div>
+
+		<div class="slide">
+			<h2><code>this</code></h2>
+			<p>This is a special keyword used in JavaScript (as well as other languages) to refer to the current object.  
 		</div>
 
 	</div>
