@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+	<title>Comm Lab - Week 4</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="slides.js"></script>
+	<style>
+		.slides .slide {
+			background: linear-gradient(to bottom, #a4cbf2 0%,#afa6ff 77%,lavender 100%); /* W3C */
+		}
+	</style>
+</head>
+<body>
+	<div id="container" class="slides">
+		<div class="slide">
+			<h1>JavaScript: Objects & jQuery</h1>
+		</div>
+		<div class="slide">
+			<blockquote>JavaScript is designed on a simple object-based paradigm. An object is a collection of properties, and a property is an association between a name (or key) and a value. A property's value can be a function, in which case the property is known as a method. In addition to objects that are predefined in the browser, you can define your own objects. </blockquote>
+			<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects" target="blank">MDN Objects guide</a></p>
+		</div>
+		<div class="slide">
+			<p>We've seen some objects already, like when we typed <code>document</code> into the console or when we logged the <code>event</code> data from a mouse click.</p>
+			<p>We can write our own objects as a way of experimenting with how objects work.</p>
+		</div>
+
+		<div class="slide">
+			<p>dot notation</p>
+			<pre>> var train = new Object();</pre>
+			<pre>> train.color = "silver";</pre>
+			<pre>> train.line = 1;</pre>
+			<pre>> train.speed = 100;</pre>
+			<pre>> train.maxPassengers = 100;</pre>
+		</div>
+		<div class="slide">
+			<p>So in a way, an Object is a model for the primary data structure of JavaScript.  It is how we organize and access information and functionality.</p>
+		</div>
+		<div class="slide">
+			<p>bracket notation</p>
+			<pre>> var anotherTrain = new Object();</pre>
+			<pre>> anotherTrain["color"] = "red";</pre>
+			<pre>> anotherTrain["line"] = "2";</pre>
+		</div>
+		<div class="slide">
+			<p>Any string can be used as an key or property name, and any variable can be saved in each property, a number, string, function, array, object or even null or "" (empty string).</p>
+			<p>Once we have objects we need ways to efficiently use their data.</p>
+		</div>
+		<div class="slide">
+			<p><code>for ... in</code> is a for loop that will iterate over all of the keys in an object.</p>
+			<pre>>for (var prop in train) {
+	console.log(prop);
+	console.log(train[prop]);
+}</pre>
+
+		</div>
+		<div class="slide">
+			<p>Another, somewhat more efficient way to create an object is with object notation:</p>
+			<pre>> var yetAnotherTrain = {
+  color:"purple",
+  line:"6",
+  speed:150,
+  numPassengers: 300
+};</pre>
+		</div>
+
+		<div class="slide">
+		</div>
+
+	</div>
+</body>
+</html>
