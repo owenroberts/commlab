@@ -35,13 +35,17 @@ a, a:visited {
   color: darkblue;
   text-decoration: none;
   transition: color 100ms;
-  border-bottom: 0.1em dashed; }
+  border-bottom: 1px dotted; }
 
 a:hover {
-  color: pink; }
+  color: #B700FF; }
 
 .wrap {
   white-space: pre-wrap; }
+
+img.floated {
+  margin: 1em;
+  float: left; }
 
 .slides {
   width: 100%;
@@ -62,7 +66,8 @@ a:hover {
     padding: 2%;
     border-bottom: 1px solid black; }
     .slides .slide img {
-      max-height: 90%; }
+      max-height: 90%;
+      max-width: 100%; }
     .slides .slide img.ph {
       width: 600px; }
     .slides .slide blockquote {
