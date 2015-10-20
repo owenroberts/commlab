@@ -63,13 +63,49 @@
 		</div>
 		<div class="slide">
 			<iframe width="420" height="315" src="https://www.youtube.com/embed/rMbcqv8rxnA" frameborder="0" allowfullscreen></iframe>
+			<p>These examples use <a href="http://opensoundcontrol.org/introduction-osc" target="blank">Open Sound Control</a> to communicate between Processing and Super Collider.  OSC is super useful for communicating between applications, not just for sound.  It is especially useful for Processing because Processing is not fun for doing sound.</a></p>
 		</div>
 
+		<div class="slide">
+			<img src="music/pd.jpg" width="300px"/>
+			<img src="music/max.png" />
+			<p><a href="https://cycling74.com/products/max/" target="blank">Max/Msp/Jitter</a> is a popular visual programming language for multimedia, used often for performance and installation.</p>
+			<p><a href="https://puredata.info/" target="blank">Pure Data (pd)</a> is an open source visual programming language written by Miller Puckette (who also wrote Max).</p>
+			<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/127078532&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+		</div>
+		<div class="slide">
+			<img src="music/pd-curve.png" />
+		</div>
+		<div class="slide">
+			<img src="music/pd-code.png" />
+		</div>
+		<div class="slide">
+			<pre>#N canvas 488 117 450 300 10;
+#X obj 125 113 dac~;
+#X obj 95 58 osc~ 440;
+#X floatatom 84 14 5 0 0 0 - - -;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;</pre>
+		</div>
+
+
+
 		<!--  ableton -->
-		<!-- 
-			https://www.youtube.com/watch?v=7jl-LnAYjoM // screen dj
-			https://www.youtube.com/watch?v=BegSVUrTZkg // push video
-		 -->
+		<div class="slide">
+			<img src="music/ableton.png" width="400px" class="floated"/>
+			<p><a href="https://www.ableton.com/" target="blank">Ableton Live</a> is a music sequencer and digital audio workstation.  Live is usually used for live performance and the environment lends itself to combining samples with software synths controlled by MIDI, using beatmatching and mixing.  It has also become popular as a recording and mixing/mastering tool.</p>
+		</div>
+		<div class="slide">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/BegSVUrTZkg" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="slide">
+			<img src="music/ableton-curve.png" />
+		</div>
+
+
+		 <!--  garage band -->
+		 <!--  midi interface -->
+		 <!--  usb interface -->
 	</div>
 </body>
 </html>
