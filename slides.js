@@ -5,6 +5,12 @@ $(document).ready( function() {
 	var slidesBtn = $('<button>').attr('id', 'slidesBtn');
 	var outlineBtn = $('<button>').attr('id', 'outlineBtn');
 
+	var slides = $('.slide');
+	var slideNumber = 0;
+	var numSlides = slides.length;
+	var scrolling = false;
+	var noscroll = false;
+
 	slidesBtn.text('Slides');
 	outlineBtn.text('Outline');
 
@@ -12,51 +18,52 @@ $(document).ready( function() {
 	$(container).append(outlineBtn);
 
 	$(slidesBtn).on('click', function() {
-		console.log(container);
 		$(container).addClass('slides');
 		$(container).removeClass('outline');
+		noscroll = false;
+
 	});
 	$(outlineBtn).on('click', function() {
 		$(container).removeClass('slides');
 		$(container).addClass('outline');
+		noscroll = true;
 	});
 
-	var getSlideNumber = function() {
+	var setSlideNumber = function() {
 		slideNumber = 0;
 		for ( var i = 0; i < slides.length; i++) {
-			if ( startingOffset > $(slides[i]).offset().top ) {
+			if ( $(document).scrollTop() > $(slides[i]).offset().top ) {
 				slideNumber++;
 			}
 		}
 	};
 
-
-	var slides = $('.slide');
-	var slideNumber = 0;
-	var startingOffset = $(document).scrollTop();
-	var numSlides = slides.length;
-	getSlideNumber();
-
+	var scrollToSlide = function() {
+		if (!noscroll) {
+			console.log(noscroll);
+			$('body, html').animate({
+				scrollTop: $(slides[slideNumber]).offset().top
+			}, 500, function() {
+				scrolling = false;
+			});
+		}
+	}
+	
+	setSlideNumber();
 	
 	var nextSlide = function() {
 		if (slideNumber < numSlides - 1) {
 			slideNumber++;
-			$('body, html').animate({
-				scrollTop: $(slides[slideNumber]).offset().top
-			}, 500);
+			scrollToSlide();
 		}
 	};
 
 	var previousSlide = function() {
 		if (slideNumber > 0) {
 			slideNumber--;
-			$('body, html').animate({
-				scrollTop: $(slides[slideNumber]).offset().top
-			}, 500);
+			scrollToSlide();
 		}
 	};
-
-
 
 	$(document).on('keydown', function(ev) {
 		var key = ev.which;
@@ -71,6 +78,12 @@ $(document).ready( function() {
 				previousSlide();
 			break;
 		}
+	});
+
+	$(document).on("wheel", function() {
+		setSlideNumber();
+		if (!scrolling) setTimeout(scrollToSlide, 1000);
+		scrolling = true;
 	});
 
 });
