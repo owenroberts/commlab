@@ -49,9 +49,10 @@ img.floated {
 
 table {
   width: 100%;
-  border-collapse: collapse; }
+  border-collapse: collapse;
+  margin: 1em 0; }
   table td, table th {
-    border: 1px dotted white;
+    border: 1px dotted;
     text-align: left;
     padding: .25em;
     margin: .25em; }
