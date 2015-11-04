@@ -40,7 +40,6 @@ $(document).ready( function() {
 
 	var scrollToSlide = function() {
 		if (!noscroll) {
-			console.log(noscroll);
 			$('body, html').animate({
 				scrollTop: $(slides[slideNumber]).offset().top
 			}, 500, function() {
@@ -81,8 +80,9 @@ $(document).ready( function() {
 	});
 
 	$(document).on("wheel", function() {
+		//console.log("scrolling");
 		setSlideNumber();
-		if (!scrolling) setTimeout(scrollToSlide, 1000);
+		if (!scrolling) setTimeout(scrollToSlide, 2000);
 		scrolling = true;
 	});
 
