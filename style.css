@@ -75,6 +75,8 @@ table {
     height: 100%;
     padding: 2%;
     border-bottom: 1px solid black; }
+    .slides .slide.long {
+      height: auto; }
     .slides .slide img {
       max-height: 90%;
       max-width: 100%; }
