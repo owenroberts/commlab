@@ -68,6 +68,20 @@
 			<script src="https://gist.github.com/owenroberts/9200501697e53a5a8865.js"></script>
 		</div>
 
+		<div class="slide">
+			<p>Example with local video and <code>&lt;video&gt;</code> tag</p>
+			<p>Differences to look for:</p>
+			<li><code>video</code> tag uses property <code>.currentTime</code> rather than the method <code>.getCurrentTime()</code> used by YouTube</li>
+			<li><code>video</code> commands are <code>play()</code>, <code>pause()</code> (there's no stop) and <code>.currentTime</code> can be used to <strong>get</strong> and <strong>set</strong> the video time, so there's no <code>.seekTo()</code> method used by YouTube.</li>
+		</div>
+		<div class="slide long">
+			<p><code>index.html</code></p>
+			<script src="https://gist.github.com/owenroberts/67534099062506f9df7b.js"></script>
+		</div>
+		<div class="slide long">
+			<p><code>script.js</code></p>
+			<script src="https://gist.github.com/owenroberts/e19c1896effb9789b234.js"></script>
+		</div>
 	</div>
 </body>
 </html>
