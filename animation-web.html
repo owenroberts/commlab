@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<title>Comm Lab - Week 13</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="slides.js"></script>
+	<style>
+		.slides .slide {
+			background: linear-gradient(to bottom, #FF98F2 0%,rgba(175, 232, 255, 0.92) 77%,#90E9EE 100%);
+		}
+		.key {
+			font-size:1.5em;
+			color:darkblue;
+		}
+	</style>
+</head>
+<body>
+	<div id="container" class="slides">
+		<div class="slide">
+			<h1>Animation for the Web</h1>
+		</div>
+		<div class="slide">
+			<h2>SVG</h2>
+      		<p>SVG stands for Scalable Vector Graphics.  SVG uses XML markup to define graphics, which consist of shapes, text, colors and other properties.  SVG can be created through code, exported from Adobe Illustrator designs or drawn in <a href="http://inkscape.org/" target="blank">other programs</a>.  They can be very useful for the web, especially for sites that need to support various resolutions, because they render graphics using vectors, which provide resizing capability that isn't true for bitmap images like jpeg, png and gif.</p>
+      	</div>
+		<div class="slide">
+      		<p>SVGs can be written directly into the markup of a website.</p>
+      		<p data-height="500" data-theme-id="10088" data-slug-hash="waMRKb" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/waMRKb/'>waMRKb</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      	</div>
+		<div class="slide">
+      		<p>SVG is also useful because it can be animated with JavaScript and be given attributes like id and class like CSS.  Unlike Flash, which also support vector graphics for the web, SVG is open source and is compliant with the Document Object Model.  SVG is supported by most current browsers.  There are old versions of some browsers, like <a href="http://caniuse.com/svg" target="blank">IE and Android</a>, that do not support SVG.  </p>
+      
+      		<p>SVG supports a number of predefined shapes and elements, including <code>&#60;circle&#62;</code>, <code>&#60;rect&#62;</code>, <code>&#60;ellipse&#62;</code>, <code>&#60;line&#62;</code>, <code>&#60;polyline&#62;</code>, <code>&#60;polygon&#62;</code>, <code>&#60;path&#62;</code>.  The properties and values for SVG are similar to CSS but often use different syntax.</p>
+      	</div>
+		<div class="slide">      
+      		<p>SVGs can also contain hyperlinks.  Because SVG is written in XML, this link looks different from what we've used with HTML.  We still use the <code>anchor</code> tag, but we need to prepend the <code>href</code> property with <code>xlink:</code></p>
+      
+      	</div>
+		<div class="slide">
+      		<p>Another aspect of SVG is the ability to animate different properties.  This is cool to use with the shapes that we've been creating so far, but it gets really exciting when you think about the possibility of animating complex graphics drawn in Illustrator.</p>
+      	</div>
+		<div class="slide">
+      		<p data-height="365" data-theme-id="10088" data-slug-hash="xGZmZL" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/xGZmZL/'>xGZmZL</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+     	</div>
+		<div class="slide">
+			<p data-height="468" data-theme-id="10088" data-slug-hash="GJoPZw" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/GJoPZw/'>GJoPZw</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+     	</div>
+		<div class="slide">
+     		<p>You can also use JavaScript to control animations.</p>
+     		<p data-height="490" data-theme-id="10088" data-slug-hash="RPaBWG" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/RPaBWG/'>RPaBWG</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      	</div>
+		<div class="slide">
+         	<p>SVG files can also be embedded into HTML pages from external files.  When you save an SVG from Illustrator or another program you will have more attributes that looke like this:</p>
+   		</div>
+		<div class="slide">
+     
+	        <p>When using an external file there are several ways to place it inside an HTML document, with various advantages and disadvantages.  SVGs can be referenced with the <code>img</code> tag as a src attribute like a bitmap image.  The disadvantage with the <code>img</code> tag is that it closes the source of the SVG, making it unavailable for scripting.  SVG can also be embedded with the <code>iframe</code> tag and <code>object</code> tag, which both have disadvantages, so we'll focus on the <code>embed</code> tag, which allows scripting.</p>
+     	</div>
+		<div class="slide long">
+			<pre><code>&#60;embed src="animation/cat.svg" type="image/svg+xml" /&#62;</code></pre>
+           <embed src="animation/cat.svg" type="image/svg+xml" />
+        </div>
+		<div class="slide">
+			<h2>Links</h2>
+        	<ul>
+        		<li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG" target="blank">SVG</a></li>
+        	</ul>
+      	</div>
+
+	</div>
+
+</body>
