@@ -47,6 +47,9 @@ img.floated {
   margin: 1em;
   float: left; }
 
+div.floated {
+  float: left; }
+
 table {
   width: 100%;
   border-collapse: collapse;
