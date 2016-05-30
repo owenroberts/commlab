@@ -3,19 +3,23 @@
 <head>
 	<title>Comm Lab - Week 4</title>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="../slides/slides.css" type="text/css" />
+	<link rel="stylesheet" href="../slides/highlight/github-gist.css" type="text/css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="slides.js"></script>
-	<style>
-		.slides .slide {
-			background: linear-gradient(to bottom, #a4cbf2 0%,#afa6ff 77%,lavender 100%); /* W3C */
-		}
-	</style>
+	<script src="../slides/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="../slides/p5.min.js"></script>
+	<script src="../slides/bkg.js"></script>
+
+	<script type="text/javascript" src="../slides/lib/Blob.js"></script>
+	<script type="text/javascript" src="../slides/lib/FileSaver.min.js"></script>
+	<script src="../slides/slides.js"></script>
 </head>
 <body>
 	<div id="container" class="slides">
 		<div class="slide">
 			<h1>JavaScript: Logic & Loops + jQuery</h1>
+			<p><a href="/">Notes Home</a></p>
 		</div>
 
 		<div class="slide">
@@ -45,12 +49,12 @@
        		<p>There are a number of logical statements that help us evaluate more complex statements.  We can use <code>&&</code> and <code>||</code> to add statements to our condition.  <code>&&</code> requires all statements to evaluate true, reading left to right.  <code>||</code> requires one of the statements on either side to be true.</p>
        	</div>
        	<div class="slide">
-	        <pre><code>> true && false</code></pre>
-	        <pre><code>> 7 == "7" && NaN != 1</code></pre>
-	        <pre><code>> false || true</code></pre>
-	        <pre><code>> 7 === "7" || 1 == 1 && !(false)</code></pre>
+	        <pre><code><c></c>true && false
+<c></c>7 == "7" && NaN != 1
+<c></c>false || true
+<c></c>7 === "7" || 1 == 1 && !(false)</code></pre>
 	        <p>We can also uses parathesis <code>()</code> to nest logic rules.</p>
-	        <pre><code>> ( true && true || false ) && true</code></pre>
+	        <pre><code><c></c>( true && true || false ) && true</code></pre>
         </div> 
         
         <div class="slide">
@@ -78,10 +82,6 @@
   }
 }</code></pre>
         </div>
-		<div class="slide">
-		</div>
-
-
 		
 		<div class="slide">
 			 <h2>Loops</h2>
@@ -89,7 +89,7 @@
         </div>
 
         <div class="slide">
-        	<pre><code>> for (var i = 0; i < 5; i++) {
+        	<pre><code><c></c> for (var i = 0; i < 5; i++) {
   console.log("This is the " + i + " loop.");
 }</code></pre>
         </div>
@@ -100,8 +100,8 @@
         </div>
 
         <div class="slide">
-        	<pre><code>> var imgs = ["cat.jpg", "dog.jpg", "bird.jpg"];
-> for (var i = 0, len = imgs.length; i < len; i++) { 
+        	<pre><code><c></c> var imgs = ["cat.jpg", "dog.jpg", "bird.jpg"];
+<c></c> for (var i = 0, len = imgs.length; i < len; i++) { 
   console.log('&#60;img src="'+imgs[i]+'"&#62;');
 }</code></pre>
         </div>
@@ -109,8 +109,8 @@
        		<p>A <code>do ... while</code> statement repeats until a condition evaluates to false.</p>
        	</div>
        	<div class="slide">
-        	<pre class="block"><code>> i = 0;
-> do {
+        	<pre><code><c></c>i = 0;
+<c></c>do {
   i += 1;
   console.log(i);
 } while (i < 10);</code></pre>
@@ -119,8 +119,8 @@
         	<p>A <code>while</code> statements executes as long as the first statement is true.</p>
         </div>
         <div class="slide">
-        	<pre class="block"><code>> i = 0;
-> while (i < 5) {
+        	<pre><code><c></c>i = 0;
+<c></c>while (i < 5) {
   i++;
   console.log("Loop " + i);
 }</code></pre>
@@ -135,8 +135,8 @@
 		<div class="slide">
 			<p>You can <a href="http://jquery.com/download/" target="blank">download jQuery</a> from their site and attach the file to your HTML pages with a script tag.</p>
 			<p>Google also hosts versions of jQuery and other libraries that can be added with a script tag <a href="https://developers.google.com/speed/libraries/?hl=en#jquery" target="blank">found here</a>.</p>
-			<pre style="font-size:18px">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"&gt;
-&lt;/script&gt;</pre>
+			<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"&gt;
+&lt;/script&gt;</code></pre>
 			<p>For your JavaScript to use the jQuery object, it must come after jQuery is loaded into your document.</p>
 		</div>
 		<div class="slide">
@@ -150,10 +150,10 @@
 		<div class="slide">
 			<h2><code id="this">this</code></h2>
 			<p>This is a special keyword used in JavaScript (as well as other languages) to refer to the current object.</p>
-			<pre>$('#this').on('click', function() {
+			<pre><code>$('#this').on('click', function() {
   console.log(this);
   console.log(this.innerHTML);
-});</pre>
+});</code></pre>
 		</div>
 		<div class="slide">
 			<p data-height="268" data-theme-id="10088" data-slug-hash="ojzbvd" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/ojzbvd/'>ojzbvd</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>

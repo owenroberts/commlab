@@ -3,19 +3,23 @@
 <head>
 	<title>Comm Lab - Week 1</title>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="../slides/slides.css" type="text/css" />
+	<link rel="stylesheet" href="../slides/highlight/github-gist.css" type="text/css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="slides.js"></script>
-	<style>
-		.slides .slide {
-			background: linear-gradient(to bottom, #a4cbf2 0%,#afa6ff 77%,purple 100%); /* W3C */
-		}
-	</style>
+	<script src="../slides/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="../slides/p5.min.js"></script>
+	<script src="../slides/bkg.js"></script>
+
+	<script type="text/javascript" src="../slides/lib/Blob.js"></script>
+	<script type="text/javascript" src="../slides/lib/FileSaver.min.js"></script>
+	<script src="../slides/slides.js"></script>
 </head>
 <body>
 	<div id="container" class="slides">
 		<div class="slide">
 			<h1>CSS Fundamentals</h1>
+			<p><a href="/">Notes Home</a></p>
 		</div>
 
 		<div class="slide">
@@ -25,23 +29,23 @@
 		<div class="slide">
 			<h2>Class</h2>
 			<p>Classes describe a basic set of styles that can be applied multiple tags in an HTML page.  In HTML a class is added to an element with the <strong>class attribute</strong>.</p>
-			<pre class="brush:xml">&lt;div class="content"&gt;&lt;/div&gt;</pre>
+			<pre><code>&lt;div class="content"&gt;&lt;/div&gt;</code></pre>
 			<p>Classes can be applied to multiple elements in a layout and multiple classes can be applied to one element:</p>
-			<pre class="brush:xml">&lt;div class="content post active"&gt;&lt;/div&gt;
+			<pre><code>&lt;div class="content post active"&gt;&lt;/div&gt;
 &lt;div class="content post"&gt;&lt;/div&gt;
-&lt;div class="content post"&gt;&lt;/div&gt;</pre>
+&lt;div class="content post"&gt;&lt;/div&gt;</code></pre>
 		</div>
 		<div class="slide">
 			<p>IDs can only be used once, on one element:</p>
-			<pre class="brush:xml">&lt;div id="header"&gt;&lt;/div&gt;
-&lt;div id="main"&gt;&lt;/div&gt;</pre>
+			<pre><code>&lt;div id="header"&gt;&lt;/div&gt;
+&lt;div id="main"&gt;&lt;/div&gt;</code></pre>
 			<p>Classes and IDs can be contained in the same div:</p>
-			<pre class="brush:xml">&lt;div id="header" class="content"&gt;&lt;/div&gt;
-&lt;div id="main" class="content post"&gt;&lt;/div&gt;</pre>
+			<pre><code>&lt;div id="header" class="content"&gt;&lt;/div&gt;
+&lt;div id="main" class="content post"&gt;&lt;/div&gt;</code></pre>
 		</div>
 		<div class="slide">
 			<p>In CSS, rules for classes use a period or full stop (<code>.</code>) while IDS use the hashtag (<code>#</code>).</p>
-			<pre class="brush:xml">#header {
+			<pre><code>#header {
   background-color:gray;
   font-size:2em;
   height:60px;
@@ -50,19 +54,19 @@
   background-color:lightgray;
   font-size:1em;
   width:40px;
-}</pre>
+}</code></pre>
 		</div>
 		<div class="slide">
 			<h2>Nested selectors </h2></strong></p>
 			<p>We can also use the relationships between HTML elements to create styles.  An element that is a child of another element can be selected with a space between two selector tags.  For example, the following HTML:</p>
-			<pre class="brush:xml">&lt;ul&gt;
+			<pre><code>&lt;ul&gt;
   &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</pre>
+&lt;/ul&gt;</code></pre>
 		</div>
 		<div class="slide">
 			<p>Can be styled with the following rules:</p>
-			<pre class="brush:xml">ul {
+			<pre><code>ul {
   width:200px;
   height:20px;
   list-style:none;
@@ -78,7 +82,7 @@ ul li a {
 
 ul li a:hover {
   color:darkblue;
-}</pre>
+}</code></pre>
 		</div>
 		<div class="slide">
 			<p>There are selectors for other relationships beyond the ancestor/parent to descendant/child.  See all of the possibilities for <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors" target="_blank">selectors here</a>.</p>
@@ -108,9 +112,9 @@ ul li a:hover {
 		<div class="slide">
 			<h2>CSS color values</h2>
 			<p>Hexadecimal values are used to represent web-safe colors. Although most devices can now support millions of colors, using web-safe colors is still considered good practice and requires less download time because the hexadecimal value is a few characters shorter than the RGB value. Here&#8217;s the same color in hexadecimal:</p>
-			<pre>blockquote { color: #5768e5; }</pre>
+			<pre><code>blockquote { color: #5768e5; }</code></pre>
 			<p>CSS styles can be written using RGB.</p>
-			<pre>blockquote { color: rgb(87, 104, 229); }</pre>
+			<pre><code>blockquote { color: rgb(87, 104, 229); }</code></pre>
 			<p><a href="https://developer.mozilla.org/en/docs/Web/CSS/color_value" target="blank">Named color values and hex equivalents</a></p>
 		</div>
 		<div class="slide">
@@ -125,7 +129,7 @@ ul li a:hover {
 		</div>
 		<div class="slide">
 			<p>CSS has introduced <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()" target="_blank">HSL</a> to make writing color rules more intuitive.</p>
-			<pre>blockquote { hsl(233, 73%, 62%)</span>; }</pre>
+			<pre><code>blockquote { hsl(233, 73%, 62%); }</code></pre>
 		</div>
 		<div class="slide">
 			<p>The color wheel was developed by Johann Itten, who a Swiss painter and theorist who was part of the Bauhaus school.  He had a monk like devotion to work and color.</p>

@@ -3,19 +3,23 @@
 <head>
 	<title>Comm Lab - Week 3</title>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="../slides/slides.css" type="text/css" />
+	<link rel="stylesheet" href="../slides/highlight/github-gist.css" type="text/css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="slides.js"></script>
-	<style>
-		.slides .slide {
-			background: linear-gradient(to bottom, #a4cbf2 0%,#afa6ff 77%,lavender 100%); /* W3C */
-		}
-	</style>
+	<script src="../slides/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="../slides/p5.min.js"></script>
+	<script src="../slides/bkg.js"></script>
+
+	<script type="text/javascript" src="../slides/lib/Blob.js"></script>
+	<script type="text/javascript" src="../slides/lib/FileSaver.min.js"></script>
+	<script src="../slides/slides.js"></script>
 </head>
 <body>
 	<div id="container" class="slides">
 		<div class="slide">
 			<h1>Introduction to JavaScript</h1>
+			<p><a href="/">Notes Home</a></p>
 		</div>
 
 		<!--  what is javascript -->
@@ -47,21 +51,21 @@
 		</div>
 
 		<div class="slide">
-			<p>Okay, let's try a couple more lines: <code>> document.body</code></p>
-			<p><code>> document.body.style</code></p>
-			<p><code>> document.body.style.color = "purple";</code></p>
+			<p>Okay, let's try a couple more lines: <code>> document.body</code></pre>
+			<pre><code><c></c> document.body.style</code></pre>
+			<pre><code><c></c> document.body.style.color = "purple";</code></pre>
 			<p>
 		</div>
 
 		<div class="slide">
-			<p>Try this: <code>> document.write("Hello world!");</code></p>
+			<p>Try this: <code>> document.write("Hello world!");</code></pre>
 		</div>
 		<div class="slide">
 			<p>Oops!</p>
 			<p>We could write our entire HTML document this way, but its easier to write some HTML and then modify it with JavaScript.</p>
-			<p><code>> var elem = document.createElement("h1");</code></p>
-			<p><code>> elem.innerHTML = "JavaScript is kewl!";</code></p>
-			<p><code>> document.body.appendChild(elem);</code></p>
+			<pre><code><c></c> var elem = document.createElement("h1");	</code></pre>
+			<pre><code><c></c> elem.innerHTML = "JavaScript is kewl!";	</code></pre>
+			<pre><code><c></c> document.body.appendChild(elem);			</code></pre>
 		</div>
 
 		<!--  variables, how js treats numbers, strings booleans -->
@@ -74,17 +78,17 @@
 		</div>
 
 		<div class="slide">
-			<p><code>> var x</code></p>
+			<pre><code><c></c> var x</code></pre>
 			<p>(Oh, also, semicolons are "optional in JavaScript", but it's usually better to use them.)</p>
-			<p><code>> x = 10;</code></p>
-			<p><code>> x++;</code> (Hmm... trype <code>x</code> again)</p> 
-			<p><code>> x += 10;</code></p>
-			<p><code>> x = x + 10;</code></p>
-			<p><code>> x = "ten";</code></p>
-			<p><code>> x = "10";</code></p>
-			<p><code>> x++;</code> (er... trype <code>x</code> again)</p> 
-			<p><code>> x = false;</code></p>
-			<p><code>> typeof x;</code></p>
+			<pre><code><c></c> x = 10;
+<c></c> x++; // (Hmm... type x again)
+<c></c> x += 10;
+<c></c> x = x + 10;
+<c></c> x = "ten";
+<c></c> x = "10";
+<c></c> x++; // (er... type x again)
+<c></c> x = false;
+<c></c> typeof x;</code></pre>
 		</div>
 
 		<div class="slide">
@@ -100,20 +104,20 @@
 
 		<div class="slide">
 			<button id="alert">My id is "alert"!</button>
-			<p><code>> document.querySelector("#alert");</code></p>
-			<p><code>> var btn = document.querySelector("#alert");</code></p>
-			<p><pre>> btn.onclick = function() {
+			<pre><code><c></c> document.querySelector("#alert");
+<c></c> var btn = document.querySelector("#alert");
+<c></c> btn.onclick = function() {
   alert("Hello World!");
-}</pre>
+}</code></pre>
 		</div>
 
 		<div class="slide">
 			<p>Events are part of the web api for interacting with web pages.  Here's a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event" target="blank">list of events</a>.</p>
 			<p>In JavaScript, we can use <code>event handlers</code> or <code>event listeners</code> to detect events and then execute some commands based on data extracted from the events.</p>
 			<p><code>onclick</code> is a short hand function for a click event.  The long version looks like this:</p>
-			<pre>btn.addEventListener('click', function() { 
+			<pre><code>btn.addEventListener('click', function() { 
 	alert('click'); 
-});</pre>
+});</code></pre>
 		</div>
 
 		<div class="slide">
@@ -123,20 +127,20 @@
 
 		<div class="slide">
 			<p>Inline:</p>
-			<pre class="wrap">&lt;button onclick='alert("I am a button");'>Click me!&lt;/button></pre>
+			<pre><code>&lt;button onclick='alert("I am a button");'>Click me!&lt;/button></code></pre>
 			<button onclick='alert("I am a button");'>Click me!</button>
 		</div>
 
 		<div class="slide">
 			<p>Internal tag</p>
-			<pre class="wrap">&lt;script type="text/javascript">
+			<pre><code>&lt;script type="text/javascript">
 	var btn = document.querySelector('#confirm');
 	btn.onclick = function() {
 		var c = confirm("Does this make sense?");
 		if (c) alert("Great!");
 		else alert("Oh well...");
 }
-&lt;/script></pre>
+&lt;/script></code></pre>
 			
 			<button id="confirm">Does this make sense?</button>
 			<script>
@@ -151,16 +155,16 @@
 		
 		<div class="slide">
 			<p>An external script tag looks similar, but has a <code>src</code> attribute, like an image, to a document that contains the javascript:</p>
-			<pre>&lt;script type="text/javascript" src="my-app.js">&lt;/script></pre>
+			<pre><code>&lt;script type="text/javascript" src="my-app.js">&lt;/script></code></pre>
 			<p><code>my-app.js</code> just has the JavaScript:</p>
-			<pre class="wrap">var btn = document.querySelector('#prompt');
+			<pre><code>var btn = document.querySelector('#prompt');
 var parent = btn.parentElement;
 btn.onclick = function() {
 	var response = prompt("Where are you from?");
 	var r = document.createElement("p");
 	r.innerHTML = response;
 	parent.insertBefore(r, btn);
-}</pre>
+}</code></pre>
 			<button id="prompt">Where are you from?</button>
 			<script>
 				var btn = document.querySelector('#prompt');
@@ -178,7 +182,7 @@ btn.onclick = function() {
 		<div class="slide">
 			<h2>console.log</h2>
 			<p><code>console.log()</code> in JavaScript is like <code>println</code> in Processing.  Like all languages, we need a way to print things to the console to see what works and doesn't it.  It's extremely useful and easy to use, but you have to remember to be specific.  You can put pretty much anything in the argument parentheses for <code>console.log()</code>, so make sure it's something useful, like an element, a variable, or something else that you want to be able to read.  This is a good way to read data from various events.</p>
-			<pre class="wrap">> document.body.onclick = function(ev) { console.log(ev); };</pre>
+			<pre><code><c></c>wdocument.body.onclick = function(ev) { console.log(ev); };</code></pre>
 		</div>
 
 	</div>

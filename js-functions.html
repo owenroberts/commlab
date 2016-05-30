@@ -3,19 +3,23 @@
 <head>
 	<title>Comm Lab - Week 4</title>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="../slides/slides.css" type="text/css" />
+	<link rel="stylesheet" href="../slides/highlight/github-gist.css" type="text/css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="slides.js"></script>
-	<style>
-		.slides .slide {
-			background: linear-gradient(to bottom, #a4cbf2 0%,#afa6ff 77%,lavender 100%); /* W3C */
-		}
-	</style>
+	<script src="../slides/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="../slides/p5.min.js"></script>
+	<script src="../slides/bkg.js"></script>
+
+	<script type="text/javascript" src="../slides/lib/Blob.js"></script>
+	<script type="text/javascript" src="../slides/lib/FileSaver.min.js"></script>
+	<script src="../slides/slides.js"></script>
 </head>
 <body>
 	<div id="container" class="slides">
 		<div class="slide">
 			<h1>JavaScript: Data types & Functions</h1>
+			<p><a href="/">Notes Home</a></p>
 		</div>
 
 		<div class="slide">
@@ -24,29 +28,32 @@
 		<div class="slide">
 			<h2>Numbers</h2>
       		<p>We talked about numbers last week.  In JavaScript there are no integers, so numbers can be both integers and floating point numbers, such as <code>1</code> and <code>1.5</code>.  This makes is a bit easier for us to do math and change types without throwing an error every time we get an int but want a float (don't worry if that doesn't make sense, unless you've had some Processing or other language before this class).  JavaScript usually converts strings that look like number to numbers for us, which is a nice thing for new programmers, but can get a little hairy.  We talked about that last week and will look at it more when we talk about logical operators next week.  There is a value called <code>NaN</code>, which stands for "Not a Number", which is exactly what the value means.  You will get that if you try to evaluate a string that cannot be parsed to a number.  You can test for <code>NaN</code> using the <code>isNaN()</code> function.  Try writing this in the console:</p>
-      		<pre>> isNaN(NaN);</pre>
+      		<pre><code><c></c>isNaN(NaN);</code></pre>
       	</div>
       	<div class="slide">
       		<h2>Strings</h2>
 			<p>Strings in JavaScript are sequences of characters, using Unicode they are represented by a 16-bit number.  Characters are written as strings with the length of one.  Strings provide <code>length</code>, a property that returns the length of the string.  Try this in the console:</p>
-			<pre><code>> "Hello World".length</code></pre>
+			<pre><code><c></c>"Hello World".length</code></pre>
 			<p>Strings also have some built in methods like <code>charAt()</code> and <code>replace()</code> which help us do evaluation and manipulation.</p>
-			<pre ><code>> "Hello World".charAt(0);</code></pre>
-			<pre ><code>> "Hello World".replace("World", "Jerry");</code></pre>
+			<pre><code><c></c>"Hello World".charAt(0);
+<c></c>"Hello World".replace("World", "Jerry");</code></pre>
 		</div>
 		<div class="slide">
 			<h2>Booleans</h2>
 			<p>Booleans default to the values <code>true</code> and <code>false</code>.  In JavaScript many values will become <code>false</code>, such as <code>0</code>, <code>""</code> (empty string), <code>NaN</code>, <code>null</code>, and <code>undefined</code>.  Everything else defaults to <code>true</code>, such as <code>"Hello World"</code>, <code>1</code>, <code>99</code>, or <code>-99</code>.  Try evaluating some booleans in the console with this syntax:</p>
-			<pre ><code>Boolean("");<br>Boolean(null);<br>Boolean(4);</code></pre>
+			<pre><code><c></c>Boolean("");<br><c></c>Boolean(null);<br><c></c>Boolean(4);</code></pre>
 		</div>
 		<div class="slide">
 			<h2>Arrays</h2>
 			<p>An <code>array</code> is an object that contains a list of variables, such as this: <code>var imgs = ["cat.jpg", "dog.jpg", "alligator.jpg"];</code> which is a list of images that might be loaded into a site.  In JavaScript, the items in an array can have any datatype, like a number, string, boolean, or even another arrary.  In other languages, the data in an array usually are all of the same type.  The elements of an array are accessed by their index number, starting with zero.  So, <code>imgs[0]</code> will return <code>"cat.jpg"</code>.  Like strings, arrays have a <code>length</code> property.  Try creating an array, reading from the list, and returning the length:</p>
-			<pre ><code>myArray = ["cat", "dog", "alligator"];<br>myArray.length;<br>myArray[0];<br>myArray[2];</code></pre>
+			<pre><code><c></c>myArray = ["cat", "dog", "alligator"];
+<c></c>myArray.length;
+<c></c>myArray[0];
+<c></c>myArray[2];</code></pre>
 		</div>
 		<div class="slide">
 			<p><code>Arrays</code> can be populated by creating a new Array or assigning values.  Arrays can have any length, and unassigned spots will have the value <code>undefined</code>.</p>
-			<pre ><code>myArray[99] = "bird";<br>myArray[99];<br>myArray[98];</code></pre>
+			<pre><code><c></c>myArray[99] = "bird";<br><c></c>myArray[99];<br><c></c>myArray[98];</code></pre>
 			<p>Arrays are useful for looping through data structures to perform functions and operations.</p>
 		</div>
 		<div class="slide">
@@ -61,24 +68,24 @@
 		</div>
 		<div class="slide">
 			<p>The <code>==</code> is used to compare two variables or values, along with <code><</code>, <code>></code>, <code><=</code>, <code>>=</code> or <code>!=</code> (not equal).</p>
-			<pre>> "hello" == true</pre>
-			<pre>> var i = 10; i < 11;</pre>
-			<pre>> 6 != "six"</pre>
+			<pre><code><c></c>"hello" == true
+<c></c>var i = 10; i < 11;
+<c></c>6 != "six"</code></pre>
 			<p>The <code>===</code> is used to determine that two values are the same type</p>
-			<pre>> 7 === 7</pre>
-			<pre>> "7" === 7</pre>
+			<pre><code><c></c> 7 === 7
+<c></c>"7" === 7</code></pre>
 		</div>
 		<div class="slide">
 			<h2>Functions</h2>
 			<p>At the most basic a function is a block of code.  Functions in JavaScript can be very complex because functions are objects which can be passed and manipulated like variables.  Functions can be written inside of other functions.  Essentially, functions are blocks of code, assigned to a name like a variable.  That code can take inputs and create outputs and perform other operations.  It can be modified and used multiple times.</p>
-			      <pre class="block"><code>function printName(name) {
+			<pre><code>function printName(name) {
   console.log(name);
 }
 printName("Jerry");</code></pre>
 		</div>
 		<div class="slide">
 			<p>Functions have to be called in order to be executed.  This can be done with a call to the function as seen above.  Functions can also be made to self instantiate by adding a () to the end of the declaration, which are referred to as Immediately Invoked Function Expressions.</p>
-			<pre class="block"><code>(function printName() {
+			<pre><code>(function printName() {
   console.log("Hello, Jerry");
 })();
 </code></pre>
@@ -86,7 +93,7 @@ printName("Jerry");</code></pre>
 		</div>
 		<div class="slide">
 			<p>Functions take <code>arguments</code>, as in the above example, where "Jerry" is the argument.  This can be replaced with any string in the function call.  We can declare the number of arguments in the function declaration, or we can put in whatever arguments we want in the call and use the <code>arguments</code> variable to manipulate them. If you add more arguments to the <code>add()</code> function, it will not throw an error, but it will ignore the arguments beyond the first two.</p>
-			<pre class="block"><code>function add(n1, n2) {
+			<pre><code>function add(n1, n2) {
   console.log(n1 + n2);
 }
 add(5, 6);
@@ -98,7 +105,7 @@ addMore(5,6,7,1,6);</code></pre>
 		</div>
 		<div class="slide">
 			<p>Functions can also <code>return</code> values.  This is useful for evaluating expressions and assigning variables.</p>
-			<pre class="block"><code>function add(n1, n2){
+			<pre><code>function add(n1, n2){
   return n1 + n2;
 }
 x = add(5, 25);</code></pre>
