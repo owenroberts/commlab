@@ -33,6 +33,8 @@
 			<p>HTML can be broken down into these four components.</p>
 			<p>Elements are the basic structure of an HTML document.</p>
 			<p>Like other markup languages, HTML uses brackets like this: < > to divide content and tags. Tags tell the browser what to do with the content.  Some elements have an open tag and closing tag.</p>
+		</div>
+		<div class="slide">
 			<p>The content always goes in between the tag.  This can include text, other forms of media and other HTML elements.</p>
 			<p>Inside of the tags we can also add attributes which add information or functionality to elements with a name and value pair.</p>
 			<p>HTML elements are nested inside each other to create simple and complex structures.  If an HTML tag is opened inside of another HTML tag, it must be closed before it's parent tag is closed.</p>
@@ -73,51 +75,7 @@
 			<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction" target="blank">MDN Intro to HTML</a></li>
 			<li><a href="https://developer.mozilla.org/en/docs/Web/HTML/Element" target="blank">MDN Element Reference</a></li>
 		</div>
-		<div class="slide">
-			<h1>CSS</h1>
-		</div>
-		<div class="slide">
-			<script src="https://gist.github.com/owenroberts/a5e083b1e7aa0c148d6b.js"></script>
-		</div>
-		<div class="slide">
-			<p>CSS stands for Cascading Style Sheets.  It was first proposed in 1994 to define visual styles for HTML pages on the World Wide Web but took time to gain acceptance, though eventually becoming standard.</p>
-			<p>"Cascading" refers to the way the style are implemented, with external, internal and inline style rules being applied to pages in order.</p>
-			<p>CSS uses <code>selectors</code> to target elements and add visual styles.  Any HTML element, such as <code>body</code> or <code>p</code> can be used as a CSS selector, although the default styles and behaviors of HTML elements vary.  Every selector has one or multiple values that define a corresponding property.</p>
-			<p>CSS defines rules for the colors, fonts, dimensions and positions of elements on a web page.</p>
-		</div>
-		<div class="slide">
-			<img src="html/selector.png" />
-		</div>
-		<div class="slide">
-			<p>There are three ways to include CSS styles in an HTML document.</p>
-			<p>External stylesheets are linked into the HTML page by a tag.  These styles can be applied to multiple HTML pages: <code>&lt;link rel="stylesheet" href="style.css" type="text/css" /&gt;</code></p>
-		</div>
-		<div class="slide">
-			<p>Internal stylesheets can be added anywhere inside of an HTML document, using the <code>style</code> tag, but are typically found in the <code>&lt;head&gt;</code> section.  These styles will only apply to elements on a single page, but will apply to all elements of that page.</p>
-			<pre><code>&lt;style&gt;
-	a { color: pink; }
-	a:hover { color: blue; }
-&lt;/style&gt;
-			</code></pre>
-		</div>
-		<div class="slide">
-			<p>Inline styles are added inside of an HTML element as an attribute and will apply to that element only.</p>
-			<p><code>&lt;div style="background:blue;padding:5px;"&gt;&lt;/div&gt;</code></p>
-		</div>
-		<div class="slide">
-			<h2>Comments</h2>
-			<p>In code, comments are sections of the program that are not read by the compiler.  Different languages use different conventions to separate comments within the language of the program.  These are used by developers to note what the code is doing for other developers or for future reference.</p>
-			<p>It's extremely important to comment your code with useful comments.</p>
-			<p>In HTML, a comment can be written using this syntax: <code>&lt;!--  COMMENT TEXT GOES HERE --></code></p>
-			<p>In CSS, comments use this syntax: <code>/* COMMENT IS HERE */</code>
-		</div>
-		<div class="slide">
-			<h2>References</h2>
-			<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started" target="blank">MDN Getting Started With CSS</a></p>
-			<h2>Tutorials</h2>
-			<p><a href="https://www.codecademy.com/en/tracks/web" target="blank">Code Academy</a></p>
-			<p><a href="http://www.dontfeartheinternet.com/" target="blank">Don't Fear the Internet</a></p>
-		</div>
+		
 	</div>
 </body>
 </html>
