@@ -19,7 +19,7 @@
 	<div id="container" class="slides">
 		<div class="slide">
 			<h1>CSS Fundamentals</h1>
-			<p><a href="/">Notes Home</a></p>
+			<p><a href="index.html">Notes Home</a></p>
 		</div>
 
 		<div class="slide">
@@ -92,10 +92,9 @@ ul li a:hover {
 			<p><code>a:hover { }</code> is a <code>pseudo selector</code>.  Pseudo selectors refer to interactive states that change after the page is loaded.  <code>:hover</code> is when the mouse hovers over an element.</p>
 			<p><code>:visited</code>, <code>:active</code> and <code>:focus</code> are other common pseudo selectors.</p>
 		</div>
-		<div class="slide">
-			<h1>Color</h1>
-		</div>
-		<div class="slide">
+
+		<div class="slide" id="color">
+			<h2>Color</h2>
 			<p>Color is subjective and dynamic. Colors signify different meanings to different viewers. Similarly, the way color is displayed physically also changes between mediums. Even with computers, the number of colors, the brightness and the general gamut of color can change from machine to machine.</p>
 			<p>Josef Albers is a great resource for any exploration of color. His <a href="http://books.google.com/books?id=wN9o0OULXjIC&amp;printsec=frontcover#v=onepage&amp;q&amp;f=false" target="_blank"><em>Interaction of Color</em></a> presents the theory that colors relate to one another in a deceptive and elusive logic.</p>
 		</div>
@@ -140,25 +139,32 @@ ul li a:hover {
 			<p><a href="https://color.adobe.com/create/color-wheel/" target="_blank">Adobe Kuler</a> color scheme designer</p>
 		</div>
 		<div class="slide">
-			<p><strong>Monochromatic</strong>. One hue is chosen, while the brightness and saturation can be varied. This is popular in many comic books and print publications, where using multiple colors can be expensive. I think that creates a retro feel, because we&#8217;re used to seeing it in print.</p>
+			<p><strong>Monochromatic</strong>. One hue is chosen, while the brightness and saturation can be varied. This is popular in many comic books and print publications, where using multiple colors can be expensive. I think that creates a retro feel, because we&#8217;re used to seeing it in print.</p>	
+		</div>
+		<div class="slide">
 			<img src="color/jason.jpg" />
 		</div>
 		<div class="slide">
 			<p><strong>Analogous</strong> color schemes are created by selecting colors that sit next to one another on the color wheel. These tend to have a natural, harmonious feel. Seen in paintings of nature like this Edward Hopper.</p>
+		</div>
+		<div class="slide">
 			<img width="600px" src="color/hopper.jpg" />
 		</div>
 		<div class="slide">
 			<p><strong>Complementary</strong> color schemes are popular on the web. In these schemes there is a dominant color and its compliment on the other side of the color wheel.  This creates bold contrasts like in Starry Night by Van Gogh.</p>
+		</div>
+		<div class="slide">
 			<img src="color/vangogh.jpg" />
 		</div>
 		<div class="slide">
 			<p><strong>Triadic</strong> schemes use three colors equally distant on the color wheel. They were popular in early comic books that used a lot of basic color to make images and characters pop out of the page.</p>
+		</div>
+		<div class="slide">
 			<img src="color/daredevil.jpg" />
 		</div>
-		<div class="slide">
-			<h1>Typography</h1>
-		</div>
-		<div class="slide">
+
+		<div class="slide" id="typography">
+			<h2>Typography</h2>
 			<p><iframe src="https://www.youtube.com/embed/wOgIkxAfJsk?rel=0&amp;showinfo=0" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
 		</div>
 		<div class="slide">
@@ -185,9 +191,9 @@ ul li a:hover {
 			<p><a href="http://www.adobe.com/devnet/archive/html5/articles/web-typography-and-css-font-face.html" target="_blank">More on @font-face</a></p>
 			<p><a href="http://webdesign.tutsplus.com/articles/understanding-typographic-hierarchy--webdesign-11636" target="_blank">Typographic hierarchy</a></p>
 		</div>
-		<div class="slide">
-			<h2>Box model</h2>
-			<p>The position, size and layout of HTML elements is determined by the CSS box model, the display property and floats.  Without these rules, HTML pages are rendered in the order of the elements from the top to the bottom.</p>
+		<div class="slide" id="layout">
+			<h2>Layout</h2>
+			<p>In CSS, layout begins with <strong>box model</strong>.  The position, size and layout of HTML elements is determined by the CSS box model, the display property and floats.  Without these rules, HTML pages are rendered in the order of the elements from the top to the bottom.</p>
 		</div>
 		<div class="slide">
 			<img src="color/box.png" />
@@ -211,6 +217,8 @@ border-bottom:
 border-right:
 border-left:</code></pre>
 			<p>Which can be applied to padding and margin as well.</p>
+		</div>
+		<div class="slide">
 			<p>The side can also be combined into one rule.  <code>margin: 1em;</code> will apply a 1em margin to each side.  <code>margin: 1em 0;</code> will apply a 1em margin to the top and bottom and a 0 margin to the right and left sides.  Using four numbers, we can apply in this order- top, right, bottom, left (clockwise around the circle), so, <code>margin: 1em 0 10px 5px;</code> is equivalent to:</p>
 			<pre><code>margin-top:1em;
 margin-right:0;
@@ -278,10 +286,10 @@ margin-left:5px;</code></pre>
 			<p>Other content will wrap around the float:</p>
 			<img src="color/floats.png" />
 		</div>
-		<div class="slide">
+		<div class="slide" id="transition">
 			<h2>Transition and animation</h2>
 			<p>CSS3 has introduced experimental features which have gained near universal support for doing simple animations and transition with CSS, which used to only be available with JavaScript.</p>
-			<pre>a:hover { transition: color 1s ease-in-out; }</pre>
+			<pre><code>a:hover { transition: color 1s ease-in-out; }</code></pre>
 			<p>Animations use the same transition syntax with keyframes.</p>
 			<li><a href="http://css3.bradshawenterprises.com/transitions/" target="blank">Transitions</a></li>
 			<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations" target="blank">Animations</a></li>
