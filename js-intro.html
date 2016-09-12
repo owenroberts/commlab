@@ -39,33 +39,33 @@
 		</div>
 
 		<div class="slide">
-			<p>Start by typing <code>> document</code> into the console.</p>
+			<p>Start by typing <code>document</code> into the console.</p>
 			<p>Look familiar?  This is our HTML document, interpreted as a node structure by the Document Object Model.</p>
 		</div>
 
-		<!--  writing stuff to dom / what is the dom? -->
 		<div class="slide">
-			<p>Quick aside: What is the document object model?</p>
+			<p>Document object model</p>
 			<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="blank">DOM</a></li>
 			<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples" target="blank">DOM Examples</a></li>
 		</div>
 
 		<div class="slide">
-			<p>Okay, let's try a couple more lines: <code>> document.body</code></pre>
-			<pre><code><c></c> document.body.style</code></pre>
-			<pre><code><c></c> document.body.style.color = "purple";</code></pre>
-			<p>
+			<p>Okay, let's try a couple more lines: </p>
+			<pre><code><c></c> document.body
+<c></c> document.body.style
+<c></c> document.body.style.color = "purple";</code></pre>
 		</div>
 
 		<div class="slide">
-			<p>Try this: <code>> document.write("Hello world!");</code></pre>
+			<p>Try this:</p>
+			<pre><code><c></c> document.write("Hello world!");</code></pre>
 		</div>
 		<div class="slide">
 			<p>Oops!</p>
 			<p>We could write our entire HTML document this way, but its easier to write some HTML and then modify it with JavaScript.</p>
-			<pre><code><c></c> var elem = document.createElement("h1");	</code></pre>
-			<pre><code><c></c> elem.innerHTML = "JavaScript is kewl!";	</code></pre>
-			<pre><code><c></c> document.body.appendChild(elem);			</code></pre>
+			<pre><code><c></c> var elem = document.createElement("h1");
+<c></c> elem.innerHTML = "JavaScript is kewl!";	
+<c></c> document.body.appendChild(elem);			</code></pre>
 		</div>
 
 		<!--  variables, how js treats numbers, strings booleans -->
@@ -79,7 +79,7 @@
 
 		<div class="slide">
 			<pre><code><c></c> var x</code></pre>
-			<p>(Oh, also, semicolons are "optional in JavaScript", but it's usually better to use them.)</p>
+			<p>(Oh, btw, semicolons are "optional in JavaScript", but it's usually better to use them.)</p>
 			<pre><code><c></c> x = 10;
 <c></c> x++; // (Hmm... type x again)
 <c></c> x += 10;
@@ -156,7 +156,7 @@
 		<div class="slide">
 			<p>An external script tag looks similar, but has a <code>src</code> attribute, like an image, to a document that contains the javascript:</p>
 			<pre><code>&lt;script type="text/javascript" src="my-app.js">&lt;/script></code></pre>
-			<p><code>my-app.js</code> just has the JavaScript:</p>
+			<p><code>app.js</code> has the JavaScript:</p>
 			<pre><code>var btn = document.querySelector('#prompt');
 var parent = btn.parentElement;
 btn.onclick = function() {
@@ -182,7 +182,7 @@ btn.onclick = function() {
 		<div class="slide">
 			<h2>console.log</h2>
 			<p><code>console.log()</code> in JavaScript is like <code>println</code> in Processing.  Like all languages, we need a way to print things to the console to see what works and doesn't it.  It's extremely useful and easy to use, but you have to remember to be specific.  You can put pretty much anything in the argument parentheses for <code>console.log()</code>, so make sure it's something useful, like an element, a variable, or something else that you want to be able to read.  This is a good way to read data from various events.</p>
-			<pre><code><c></c>wdocument.body.onclick = function(ev) { console.log(ev); };</code></pre>
+			<pre><code><c></c>document.body.onclick = function(ev) { console.log(ev); };</code></pre>
 		</div>
 
 	</div>
