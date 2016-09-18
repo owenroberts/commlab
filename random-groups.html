@@ -1,0 +1,24 @@
+<script>
+Array.prototype.clone = function() {
+	return this.slice(0);
+};
+
+var clas = ["Vicky","Arshaun","Sabrina","Sam","Jackie","Peter","Alex","Kevin","Tyler","April","Joyce","Linda","Sherry","Jamie","Eric"];
+
+document.write("Groups" + "<br>");
+
+var n = 2;
+
+while (clas.length > 0) {
+	for (var i = 0; i < n; i++) {
+		var stu = Math.floor( Math.random() * clas.length );
+		document.write(clas[stu]);
+		clas.splice(stu, 1);
+	}
+	if (clas.length > 0 && clas.length < n) {
+		for (var i = 0; i < clas.length; i++) document.write(clas[i]);
+		clas.splice(0, clas.length);
+	}
+	document.write("<br>")
+}
+</script>

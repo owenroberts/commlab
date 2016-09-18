@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	<title>Comm Lab</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="slides/slides.css" type="text/css" />
+	<link rel="stylesheet" href="slides/highlight/github-gist.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="slides/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="slides/p5.min.js"></script>
+	<script src="slides/bkg.js"></script>
+
+	<script src="slides/lib/Blob.js"></script>
+	<script src="slides/lib/FileSaver.min.js"></script>
+	<script src="slides/slides.js"></script>
+</head>
+<body>
+	<div id="container" class="slides">
+		<div class="slide">
+			<h1>JavaScript: Data types</h1>
+			<p><a href="index.html">Notes Home</a></p>
+		</div>
+		<div class="slide">
+			<p>Last week we introduced the concept of a variable, an object that stores a piece of information.  Today we will look deeper at data types and how they are used in JavaScript.  Variables are different data types, which are the most basic structural element of every programming language.  Writing scripts involves manipulating the values of variables, which all have types.  The basic types in JavaScript are <code>numbers</code>, <code>strings</code>, <code>booleans</code>, and <code>objects</code>.  We will talk more about objects in the next class, but for now, objects are broken down further into <code>functions</code> and <code>arrays</code>, which we will talk about today.  Also look out for error literals, like <code>null</code>, <code>undefined</code> and <code>NaN</code>.</p>
+		</div>
+		<div class="slide">
+			<h2>Numbers</h2>
+      		<p>We talked about numbers last week.  In JavaScript there are no integers, so numbers can be both integers and floating point numbers, such as <code>1</code> and <code>1.5</code>.  This makes is a bit easier for us to do math and change types without throwing an error every time we get an int but want a float (don't worry if that doesn't make sense, unless you've had some Processing or other language before this class).  JavaScript usually converts strings that look like number to numbers for us, which is a nice thing for new programmers, but can get a little hairy.  We talked about that last week and will look at it more when we talk about logical operators next week.  There is a value called <code>NaN</code>, which stands for "Not a Number", which is exactly what the value means.  You will get that if you try to evaluate a string that cannot be parsed to a number.  You can test for <code>NaN</code> using the <code>isNaN()</code> function.  Try writing this in the console:</p>
+      		<pre><code><c></c>isNaN(NaN);</code></pre>
+      	</div>
+      	<div class="slide">
+      		<h2>Strings</h2>
+			<p>Strings in JavaScript are sequences of characters, using Unicode they are represented by a 16-bit number.  Characters are written as strings with the length of one.  Strings provide <code>length</code>, a property that returns the length of the string.  Try this in the console:</p>
+			<pre><code><c></c>"Hello World".length</code></pre>
+			<p>Strings also have some built in methods like <code>charAt()</code> and <code>replace()</code> which help us do evaluation and manipulation.</p>
+			<pre><code><c></c>"Hello World".charAt(0);
+<c></c>"Hello World".replace("World", "Jerry");</code></pre>
+		</div>
+		<div class="slide">
+			<h2>Booleans</h2>
+			<p>Booleans default to the values <code>true</code> and <code>false</code>.  In JavaScript many values will become <code>false</code>, such as <code>0</code>, <code>""</code> (empty string), <code>NaN</code>, <code>null</code>, and <code>undefined</code>.  Everything else defaults to <code>true</code>, such as <code>"Hello World"</code>, <code>1</code>, <code>99</code>, or <code>-99</code>.  Try evaluating some booleans in the console with this syntax:</p>
+			<pre><code><c></c>Boolean("");<br><c></c>Boolean(null);<br><c></c>Boolean(4);</code></pre>
+		</div>
+		<div class="slide">
+			<h2>Arrays</h2>
+			<p>An <code>array</code> is an object that contains a list of variables, such as this: <code>var imgs = ["cat.jpg", "dog.jpg", "alligator.jpg"];</code> which is a list of images that might be loaded into a site.  In JavaScript, the items in an array can have any datatype, like a number, string, boolean, or even another arrary.  In other languages, the data in an array usually are all of the same type.  The elements of an array are accessed by their index number, starting with zero.  So, <code>imgs[0]</code> will return <code>"cat.jpg"</code>.  Like strings, arrays have a <code>length</code> property.  Try creating an array, reading from the list, and returning the length:</p>
+			<pre><code><c></c>myArray = ["cat", "dog", "alligator"];
+<c></c>myArray.length;
+<c></c>myArray[0];
+<c></c>myArray[2];</code></pre>
+		</div>
+		<div class="slide">
+			<p><code>Arrays</code> can be populated by creating a new Array or assigning values.  Arrays can have any length, and unassigned spots will have the value <code>undefined</code>.</p>
+			<pre><code><c></c>myArray[99] = "bird";<br><c></c>myArray[99];<br><c></c>myArray[98];</code></pre>
+			<p>Arrays are useful for looping through data structures to perform functions and operations.</p>
+		</div>
+		<div class="slide">
+			<h2>Null and undefined</h2>
+			<p>JavaScript uses <code>null</code> and <code>undefined</code> as distinct values.  <code>null</code> indicates a purposely unassigned value.  <code>undefined</code> indicates a variable has not been instantiated, or created.</p>
+		</div>
+		<div class="slide">
+			<h2>Operators</h2>
+		    <p>The <code>=</code> sign is used to assign data to variables, like <code>var img = "mycat.jpg";</code> or <code>var i = 0;</code>.  You can also use <code>+</code> to add variables, <code>-</code> for subtraction, <code>*</code> for multiplication, <code>/</code> for division,  <code>++</code> to increment by one, <code>--</code> to decrease a value by one, <code>+=</code> to add a value to the current value, or <code>-=</code> to subtract that value.  You can also use <code>*=</code> and <code>/=</code>.  Modulus, <code>%</code> will give you the remainder from a division, ie <code>5%4 = 1</code>, which is useful for cyclical logic, and can also be used as <code>%=</code>.  These operations are done primarily on numbers, but you can do addition with strings, and add strings to numbers.</p>
+		    <p>Try a few operations in the console:</p>
+		    <pre class="block"><code>> n = x + 1<br>> n += 1<br>> "Hello" + "World"<br>> "7" + 7</code></pre>
+		</div>
+		<div class="slide">
+			<p>The <code>==</code> is used to compare two variables or values, along with <code><</code>, <code>></code>, <code><=</code>, <code>>=</code> or <code>!=</code> (not equal).</p>
+			<pre><code><c></c>"hello" == true
+<c></c>var i = 10; i < 11;
+<c></c>6 != "six"</code></pre>
+			<p>The <code>===</code> is used to determine that two values are the same type</p>
+			<pre><code><c></c> 7 === 7
+<c></c>"7" === 7</code></pre>
+		</div>
+	</div>
+</body>
+</html>

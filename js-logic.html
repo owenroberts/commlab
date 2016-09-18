@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+	<title>Comm Lab</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="slides/slides.css" type="text/css" />
+	<link rel="stylesheet" href="slides/highlight/github-gist.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="slides/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="slides/p5.min.js"></script>
+	<script src="slides/bkg.js"></script>
+
+	<script  src="slides/lib/Blob.js"></script>
+	<script  src="slides/lib/FileSaver.min.js"></script>
+	<script src="slides/slides.js"></script>
+</head>
+<body>
+	<div id="container" class="slides">
+		<div class="slide">
+			<h1>JavaScript: Logic</h1>
+			<p><a href="index.html">Notes Home</a></p>
+		</div>
+
+      	<div class="slide">
+			<h2>Comparison operators</h2>
+			<p>Using comparison operators, we can test the values of variables to detect if they are equivalent.</p>
+			<pre><code><c></c>var x = 1;
+<c></c>var y = 0;
+<c></c>var z = "1";
+<c></c>var a = 5;
+
+<c></c>x == y;
+<c></c>x != y;
+<c></c>x == z;
+
+
+<c></c>x === z;
+<c></c>x !== z;
+
+<c></c>x > y;
+<c></c>x < y;
+<c></c>x >= z;
+<c></c>x <= a;</code></pre>
+		</div>
+		<div class="slide">
+			<ul>
+				<li><code>==</code> two values are the same</li>
+				<li><code>!=</code> two values are <strong>not</strong> the same</li>
+				<li><code>></code> value 1 is greater than value 2</li>
+				<li><code><</code> value 1 is less than value 2</li>
+				<li><code>>=</code> value 1 is greater than or equal to value 2</li>
+				<li><code><=</code> value 1 is less than or equal to value 2</li>
+				<li><code>===</code> two values are the same and same type</li>
+				<li><code>!==</code> two values are <strong>not</strong> the same or <strong>not</strong> the same type</li>
+			</ul>
+		</div>
+				<div class="slide">
+			<p>We can compare strings as well as numbers.</p>
+			<pre><code><c></c>var x = "hello";
+<c></c>var y = "world";
+
+<c></c>x == y;
+<c></c>x != y;</code></pre>
+		</div>
+
+		<div class="slide">
+			<h2>Booleans</h2>
+			<p>A <code>boolean</code> is a datatype that can be either <code>true</code> or <code>false</code>.</p>
+			<p>Booleans default to the values <code>true</code> and <code>false</code>.</p>
+			<p>In JavaScript other values will evaluate to <code>false</code>, such as <code>0</code>, <code>""</code> (empty string), <code>NaN</code>, <code>null</code>, and <code>undefined</code>.  Everything else defaults to <code>true</code>, such as <code>"Hello World"</code>, <code>1</code>, <code>99</code>, or <code>-99</code>.  Try evaluating some booleans in the console with this syntax:</p>
+			<pre><code><c></c>Boolean(true);
+<c></c>Boolean(false);
+<c></c>Boolean("");
+<c></c>Boolean(null);
+<c></c>Boolean(0);
+<c></c>Boolean(4);</code></pre>
+		</div>
+
+		<div class="slide">
+			<h2>Conditionals</h2>
+			<p>Using booleans, we can make decision in our program with conditional statements starting with the keyword <code>if</code>:</p>
+			<pre><code><c></c>var a = true;
+<c></c>var b = false;
+<c></c>if (a == true) {
+	console.log("This is true!");
+}
+<c></c>if (a == false) {
+	console.log("This is false!");
+}
+<c></c>if (b) {
+	console.log("This is true!");
+}
+<c></c>if (!b) {
+	console.log("This is false!");
+}
+</code></pre>
+		</div>
+
+		<div class="slide">
+			<p>We can evaluate statements using numbers and strings as well:</p>
+			<pre><code><c></c>var x = 0;
+<c></c>var y = 1;
+<c></c>var a = "hello";
+<c></c>var b = "world";
+<c></c>if (x == y) { console.log("This is true!"); }
+<c></c>if (x > y) { console.log("This is true!"); }
+<c></c>if (x != y) { console.log("This is true!"); }
+<c></c>if (x == a) { console.log("This is true!"); }
+<c></c>if (x > a.length) { console.log("This is true!"); }
+<c></c>if (x <= a.length) { console.log("This is true!"); }</code></pre>
+		</div>
+
+		<div class="slide">
+			<p>We can use <code>else</code> to tell our program what to do if the conditional is false:</p>
+			<pre><code><c></c>var x = 0;
+<c></c>var y = 5;
+<c></c>if (x < y) {
+	x++;
+} else {
+	x--;
+}
+console.log(x);</code></pre>
+		</div>
+		<div class="slide">
+			<h2>else if and switch</h2>
+			<p>Often there will be a set of conditions to test rather than a simple <code>if {} else {}</code> statement with a binary condition.</p>
+			<p>In these cases we can use <code>else if</code> to catch other conditions, or a <code>switch</code> statement.</p>
+		</div>
+
+		<div class="slide">
+			<pre><code>
+<c></c>var compare = function(n1, n2) {
+	if (n1 == n2) {
+		console.log("The values are equal.");
+	} else if (n1 < n2) {
+		console.log(n1 + " is less than " + n2);
+	} else {
+		console.log(n1 + " is greater than " + n2);
+	}
+};
+<c></c>compare(0, 10);
+<c></c>compare(1, 0);
+<c></c>compare(5, 5);</code></pre>
+		</div>
+
+		<div class="slide">
+			<pre><code><c></c>var x = 0;
+<c></c>var y = 1;
+<c></c>var z = 2;
+<c></c>switch(0) {
+	case x:
+		console.log("the value is x");
+	break;
+
+	case y:
+		console.log("the value is y");
+	break;
+
+	default:
+		console.log("does not match a value");
+	break;
+}</code></pre>
+			<p><code>switch</code> is not used often because the pattern is easily replicated with an <code>object</code> (which we'll learn in a few weeks).</p>
+		</div>
+
+
+		<div class="slide">
+			<h2>Logical operators - AND and OR</h2>
+			<p>There are a number of logical statements that help us evaluate more complex statements.  We can use <code>&&</code> and <code>||</code> to add statements to our condition.  <code>&&</code> requires all statements to evaluate true, reading left to right.  <code>||</code> requires one of the statements on either side to be true.</p>
+       	</div>
+       	<div class="slide">
+	        <pre><code><c></c>true && false
+<c></c>7 == "7" && NaN != 1
+<c></c>false || true
+<c></c>7 === "7" || 1 == 1 && !(false)</code></pre>
+	        <p>We can also uses parathesis <code>()</code> to nest logic rules.</p>
+	        <pre><code><c></c>( true && true || false ) && true</code></pre>
+        </div>
+        		<div class="slide">
+			<pre><code><c></c>var x = 0;
+<c></c>var width = 5;
+<c></c>var start = true;
+<c></c>if (x < width && start) {
+	x++;
+} else if (x > 0) {
+	if (start) start = false;
+	x--;
+}
+console.log(x);
+</code></pre>
+		</div>
+
+    </div>
+</body>
+</html>

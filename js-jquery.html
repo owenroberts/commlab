@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+	<title>Comm Lab</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="slides/slides.css" type="text/css" />
+	<link rel="stylesheet" href="slides/highlight/github-gist.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="slides/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="slides/p5.min.js"></script>
+	<script src="slides/bkg.js"></script>
+
+	<script  src="slides/lib/Blob.js"></script>
+	<script  src="slides/lib/FileSaver.min.js"></script>
+	<script src="slides/slides.js"></script>
+</head>
+<body>
+	<div id="container" class="slides">
+		<div class="slide">
+			<h1>jQuery</h1>
+			<p><a href="index.html">Notes Home</a></p>
+		</div>
+
+		<div class="slide">
+			<p>jQuery is a JavaScript library that simplifies scripting for HTML pages using DOM element selectors and a set of animations, transitions and other manipulations based on CSS and HTML. jQuery was released in 2006 and has become extremely popular in front end web development. One of the features of jQuery is that it is compatible with all major browsers.</p>
+		</div>
+		<div class="slide">
+			<p>You can <a href="http://jquery.com/download/" target="blank">download jQuery</a> from their site and attach the file to your HTML pages with a script tag.</p>
+			<p>Google also hosts versions of jQuery and other libraries that can be added with a script tag <a href="https://developers.google.com/speed/libraries/?hl=en#jquery" target="blank">found here</a>.</p>
+			<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"&gt;
+&lt;/script&gt;</code></pre>
+			<p>For your JavaScript to use the jQuery object, it must come after jQuery is loaded into your document.</p>
+		</div>
+		<div class="slide">
+			<p>jQuery uses a $ to define and access the library. The basic syntax of a jQuery function looks like this: <code>$('selector').action()</code>. </p>
+			<p>Like in CSS, the selector refers to an HTML element. The action refers to the script that will be executed on that element.</p>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="wKzKxO" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/wKzKxO/'>wKzKxO</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<h2><code id="this">this</code></h2>
+			<p>This is a special keyword used in JavaScript (as well as other languages) to refer to the current object.</p>
+			<pre><code>$('#this').on('click', function() {
+  console.log(this);
+  console.log(this.innerHTML);
+});</code></pre>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="ojzbvd" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/ojzbvd/'>ojzbvd</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="merezG" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/merezG/'>merezG</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		
+
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="NGRxGP" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/NGRxGP/'>NGRxGP</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="rOMxOm" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/rOMxOm/'>rOMxOm</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="LpRGpm" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/LpRGpm/'>LpRGpm</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="KdgVzM" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/KdgVzM/'>KdgVzM</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="LpRGNr" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/LpRGNr/'>LpRGNr</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="PPGZGM" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/PPGZGM/'>PPGZGM</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="bVwEgd" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/bVwEgd/'>bVwEgd</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<div class="slide">
+			<p data-height="268" data-theme-id="10088" data-slug-hash="xwEwML" data-default-tab="result" data-user="owenroberts" class='codepen'>See the Pen <a href='http://codepen.io/owenroberts/pen/xwEwML/'>xwEwML</a> by Owen Roberts (<a href='http://codepen.io/owenroberts'>@owenroberts</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+		</div>
+
+		<div class="slide">
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow and error handling on MDN</a></li>
+		</div>
+	</div>
+</body>
+</html>
