@@ -18,52 +18,144 @@
 <body>
 	<div id="container" class="slides">
 		<div class="slide">
-			<h1>JavaScript: Loops</h1>
+			<h1>JavaScript: Loops & Arrays</h1>
 			<p><a href="index.html">Notes Home</a></p>
 		</div>
-		<div class="slide">
-			 <h2>Loops</h2>
-        	<p>A loop is a set of commands that is executed repeatedly until a condition changes.  JavaScript uses several loops statements.  We will most often use the <code>for</code> loop.</p>
-        </div>
 
-        <div class="slide">
-        	<pre><code><c></c> for (var i = 0; i < 5; i++) {
+		<div class="slide">
+			<h2>Arrays</h2>
+			<p>An <code>array</code> is an object that contains a list of values or variables:</p>
+			<pre><code><c></c>var imgs = ["cat.jpg", "dog.jpg", "bird.jpg"];
+<c></c>var decades = [1980, 1990, 2000, 2010, 2020];</code></pre>
+		</div>
+
+		<div class="slide">
+			<p>In JavaScript, the items in an array can have any datatype, like a number, string, boolean, or even another arrary.  In other languages, the data in an array usually are all of the same type.  The elements of an array are accessed by their index number, starting with <code>[0]</code>.</p>
+		</div>
+
+		<div class="slide">
+			<p><code>imgs[0]</code> will return <code>"cat.jpg"</code>.  Like strings, arrays have a <code>length</code> property.  Try creating an array, reading from the list, and returning the length:</p>
+			<pre><code><c></c>var myArray = ["cat", "dog", "alligator"];
+<c></c>myArray.length;
+<c></c>myArray[0];
+<c></c>myArray[2];</code></pre>
+		</div>
+
+		<div class="slide">
+			<h2>Adding elements to an array</h2>
+			<pre><code><c></c>var imgs = ["cat", "dog", "bird"];
+<c></c>imgs[3] = "alligator";
+<c></c>imgs.push("lion");
+<c></c>imgs.pop();</code></pre>   
+    	</div>
+
+		<div class="slide">
+			<p>Arrays have methods and properties that help us manipulate them.</p>
+			<p>A <note>method</note> is a function that is associated with an object.</p>
+			<p>A <note>property</note> is a variable value associated with an object.</p>
+			<ul>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="blank">Array on MDN</a></li>
+			</ul>
+		</div>
+
+		<div class="slide">
+			<pre><code><c></c>var a = ["cat", "dog", "alligator"];
+<c></c>console.log(a.length);
+<c></c>var i = a.indexOf("dog");
+<c></c>console.log(i);</code></pre>
+    	</div>
+
+		<div class="slide">
+			<p><code>.length</code> is a property, because it just stores one value, the number of elements in the array.</p>
+			<p><code>.indexOf()</code> is a method, because, like a function, it takes an argument and runs a block of code which returns a value.</p>
+			<pre><code>console.log(a.indexOf);</code></pre>
+		</div>
+
+		<div class="slide">
+			<h2>Loops</h2>
+			<p>A loop defines a set of commands to execute a certain number of times.  JavaScript uses several loops statements, including <code>do</code>, <code>while</code> and <code>for</code>.</p>
+			<p>Loops look like other control statements, such as <code>if () { ... }</code> but run the code block a certain number of times.</p>
+		</div>
+
+		<div class="slide">
+			<p>A <code>while</code> statements executes as long as the first statement is true.</p>
+		</div>
+        
+		<div class="slide">
+			<pre><code><c></c>var i = 0;
+<c></c>if (i < 5) {
+  i++;
+  console.log(i);
+}</code></pre>
+			<pre><code><c></c>var i = 0;
+<c></c>while (i < 5) {
+  i++;
+  console.log(i);
+}</code></pre>
+		</div>
+
+		<div class="slide">
+			<pre><code><c></c>for (var i = 0; i < 5; i++) {
   console.log("This is the " + i + " loop.");
 }</code></pre>
-        </div>
-        <div class="slide">
-       		<p>The <code>for</code> keyword indicates the beginning of the for loop.  Inside the parentheses there are three statements that control the duration of the loop.  The first statement establishes the initial condition: <code>var i = 0;</code>.  The second statement establishes the end condition: <code>i < 5;</code>.  As long as this condition evaluates to <code>true</code>, the loop will continue.  The final statement executes at the end of each loop to change the condition: <code>i++;</code>.  The code block for the loop is then contained in the curly brackets: <code>{ ... }</code>.</p>
-        
-        	<p>This is essentially like copying and pasting the same piece of code five times, while changing a number or input.  Loops are an efficient way to excecute actions on a list or array of data.</p>
-        </div>
+		</div>
 
-        <div class="slide">
-        	<pre><code><c></c> var imgs = ["cat.jpg", "dog.jpg", "bird.jpg"];
+		<div class="slide">
+			<p>The <code>for</code> keyword indicates the beginning of the for loop.  Inside the parentheses there are three statements that control the duration of the loop.</p>
+			<p>The first statement establishes the initial condition: <code>var i = 0;</code>.</p>
+			<p>The second statement establishes a conditional: <code>i < 5;</code>.  As long as this condition evaluates to <code>true</code>, the loop will continue.</p>
+			<p>The final statement is the incremental/decremental statement or iteration: <code>i++;</code>.</p>
+			<p>The code block for the loop is then contained in the curly brackets: <code>{ ... }</code>.</p>
+			<pre><code>for (initialization; conditional; iteration;) {
+  loop body;
+}</code></pre>
+			<p>This is essentially like copying and pasting the same piece of code five times, while changing a number or input.  Loops are an efficient way to excecute actions on a list or array of data.</p>
+		</div>
+
+		<div class="slide">
+			<p>In many cases the initial condition will be the value <code>0</code> as in <code>var i = 0;</code> ("i" in this case is shorthand for <strong>index</strong>).</p>
+			<p>But our initial condition could be anything.</p>
+			<pre><code><c></c>for (var i = 1; i < 6; i++) {
+  console.log("This is the " + i + " loop.");
+}</code></pre>
+			<pre><code><c></c>for (var i = 1, len = i + 5; i < len; i++) {
+  console.log(i);
+}</code></pre>
+			<pre><code><c></c>for (var i = 1, len = i + 5; i < len; i++) {
+  console.log(i);
+}</code></pre>
+		</div>
+
+		<div class="slide">
+			<p>Likewise, we can change the conditional and iteration statements.</p>
+			<pre><code><c></c>for (var i = 0; i < 100; i += 10) {
+  console.log(i);
+}</code></pre>
+			<pre><code><c></c>for (var i = 10; i > 0; i--) {
+  console.log(i);
+}</code></pre>
+		</div>
+
+		<div class="slide">
+			<p>A practical example of a loop in JavaScript:</p>
+			<pre><code><c></c> var imgs = ["cat.jpg", "dog.jpg", "bird.jpg"];
 <c></c> for (var i = 0, len = imgs.length; i < len; i++) { 
   console.log('&#60;img src="'+imgs[i]+'"&#62;');
 }</code></pre>
-        </div>
-        <div class="slide">
-       		<p>A <code>do ... while</code> statement repeats until a condition evaluates to false.</p>
-       	</div>
-       	<div class="slide">
-        	<pre><code><c></c>i = 0;
-<c></c>do {
-  i += 1;
-  console.log(i);
-} while (i < 10);</code></pre>
-        </div>
-        <div class="slide">
-        	<p>A <code>while</code> statements executes as long as the first statement is true.</p>
-        </div>
-        <div class="slide">
-        	<pre><code><c></c>i = 0;
-<c></c>while (i < 5) {
-  i++;
-  console.log("Loop " + i);
-}</code></pre>
 		</div>
-		
+
+		<div class="slide">
+			<p><span class="note">Note on scope:</span> variables declared inside a <code>for</code> loop (or any other loop) are not scoped to the loop.  Loops do not have the same scope priveleges of functions.</p>
+			<pre><code><c></c>for (var i = 0; i < 5; i++) {
+  var x = i;
+  console.log(x);
+}
+console.log(x);</code></pre>
+		</div>
+
+        <div class="slide">
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" target="blank">MDN Loops and Iteration</a></li>
+		</div>
 	</div>
 </body>
 </html>
