@@ -23,7 +23,7 @@
 		</div>
 
 		<div class="slide">
-			<h2>Class & Id</h2>
+			<a name="class-id"><h2>Class & Id</h2>
 			<p>Along with tag based selectors, CSS rules can be applied by adding a <code>class</code> or <code>id</code> to a tag.  Class and ID work essentially the same way but have different uses and syntax.</p>
 		</div>
 		<div class="slide">
@@ -57,7 +57,7 @@
 }</code></pre>
 		</div>
 		<div class="slide">
-			<h2>Nested selectors </h2></strong></p>
+			<a name="nested"><h2>Nested selectors</h2></a>
 			<p>We can also use the relationships between HTML elements to create styles.  An element that is a child of another element can be selected with a space between two selector tags.  For example, the following HTML:</p>
 			<pre><code>&lt;ul&gt;
   &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
@@ -88,13 +88,13 @@ ul li a:hover {
 			<p>There are selectors for other relationships beyond the ancestor/parent to descendant/child.  See all of the possibilities for <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors" target="_blank">selectors here</a>.</p>
 		</div>
 		<div class="slide">
-			<h2>Pseudo selectors</h2>
+			<a name="pseudo"><h2>Pseudo selectors</h2></a>
 			<p><code>a:hover { }</code> is a <code>pseudo selector</code>.  Pseudo selectors refer to interactive states that change after the page is loaded.  <code>:hover</code> is when the mouse hovers over an element.</p>
 			<p><code>:visited</code>, <code>:active</code> and <code>:focus</code> are other common pseudo selectors.</p>
 		</div>
 
 		<div class="slide" id="color">
-			<h2>Color</h2>
+			<a name="color"><h2>Color</h2></a>
 			<p>Color is subjective and dynamic. Colors signify different meanings to different viewers. Similarly, the way color is displayed physically also changes between mediums. Even with computers, the number of colors, the brightness and the general gamut of color can change from machine to machine.</p>
 			<p>Josef Albers is a great resource for any exploration of color. His <a href="http://books.google.com/books?id=wN9o0OULXjIC&amp;printsec=frontcover#v=onepage&amp;q&amp;f=false" target="_blank"><em>Interaction of Color</em></a> presents the theory that colors relate to one another in a deceptive and elusive logic.</p>
 		</div>
@@ -164,7 +164,7 @@ ul li a:hover {
 		</div>
 
 		<div class="slide" id="typography">
-			<h2>Typography</h2>
+			<a name="typography"><h2>Typography</h2></a>
 			<p><iframe src="https://www.youtube.com/embed/wOgIkxAfJsk?rel=0&amp;showinfo=0" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
 		</div>
 		<div class="slide">
@@ -182,7 +182,7 @@ ul li a:hover {
 			<p>This is called a <code>font-stack</code>.  This is used for cases when a particular font is not supported or does not load, there will be a back up font that is closer to the desired font choice.</p>
 		</div>
 		<div class="slide">
-			<p>It&#8217;s usually safest to include only one font family on your web design. There are a lot of examples of sites that break this convention, but the decision has to be specific and considered for it to work. Throwing fonts around the page can quickly make your site look like you copied your code from the 90s. One use of multiple fonts you will see is article that use a specific font for headers while using a more generic font for the body text. This gives you the ability to have a unique feel to your site while maintaining the readability of a font that people are familiar with.</p>
+			<p>It's usually safest to include only one font family on your web design. There are a lot of examples of sites that break this convention, but the decision has to be specific and considered for it to work. Throwing fonts around the page can quickly make your site look like you copied your code from the 90s. One use of multiple fonts you will see is article that use a specific font for headers while using a more generic font for the body text. This gives you the ability to have a unique feel to your site while maintaining the readability of a font that people are familiar with.</p>
 			<p>New fonts also impact loading times.  The more font you use, the longer it will take your page to render.</p>
 		</div>
 		<div class="slide">
@@ -192,7 +192,7 @@ ul li a:hover {
 			<p><a href="http://webdesign.tutsplus.com/articles/understanding-typographic-hierarchy--webdesign-11636" target="_blank">Typographic hierarchy</a></p>
 		</div>
 		<div class="slide" id="layout">
-			<h2>Layout</h2>
+			<a name="layout"><h2>Layout</h2></a>
 			<p>In CSS, layout begins with <strong>box model</strong>.  The position, size and layout of HTML elements is determined by the CSS box model, the display property and floats.  Without these rules, HTML pages are rendered in the order of the elements from the top to the bottom.</p>
 		</div>
 		<div class="slide">
@@ -229,7 +229,7 @@ margin-left:5px;</code></pre>
 			<p>Other properties include <code>auto</code>, which will attempt to fill the space between an element and its parent, <code>inherit</code>, which will inherit the rule from the parent element, and initial, which will set it to the <code>initial</code> property of the element tag name.</p>
 		</div>
 		<div class="slide">
-			<h2>Display property</h2>
+			<a name="display"><h2>Display property</h2></a>
 			<p>The <code>display</code> property determines the horizontal space of each element.  Elements <code>with display: block;</code> will take up the entire width of the page, their own &#8220;block&#8221;.  Block elements can be assigned box model properties.  Inline elements can not.  Elements that default to block display include <code>h1-h6, div, ul, li, p</code> and others.  Default inline elements include <code>span, em, strong</code> and <code>a</code>.</p>
 		</div>
 		<div class="slide">
@@ -287,7 +287,7 @@ margin-left:5px;</code></pre>
 			<img src="color/floats.png" />
 		</div>
 		<div class="slide" id="transition">
-			<h2>Transition and animation</h2>
+			<a name="transition"><h2>Transition and animation</h2></a>
 			<p>CSS3 has introduced experimental features which have gained near universal support for doing simple animations and transition with CSS, which used to only be available with JavaScript.</p>
 			<pre><code>a:hover { transition: color 1s ease-in-out; }</code></pre>
 			<p>Animations use the same transition syntax with keyframes.</p>
