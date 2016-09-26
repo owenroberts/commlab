@@ -73,12 +73,13 @@
 
 		<div class="slide">
 			<h2>Loops</h2>
-			<p>A loop defines a set of commands to execute a certain number of times.  JavaScript uses several loops statements, including <code>do</code>, <code>while</code> and <code>for</code>.</p>
+			<p>A loop defines a set of commands to execute a certain number of times.  JavaScript uses several loop statements, including <code>do</code>, <code>while</code> and <code>for</code>.</p>
 			<p>Loops look like other control statements, such as <code>if () { ... }</code> but run the code block a certain number of times.</p>
 		</div>
 
 		<div class="slide">
 			<p>A <code>while</code> statements executes as long as the first statement is true.</p>
+			<p>This is essentially like copying and pasting the same piece of code five times, while changing a number or input.  Loops are an efficient way to excecute actions on a list or array of data.</p>
 		</div>
         
 		<div class="slide">
@@ -95,8 +96,12 @@
 		</div>
 
 		<div class="slide">
+			<p><code>for</code> loops are more common in JavaScript, because they are a little safer to write.  If you forget an increment statement in your while loop, you will create an infinite loop, which will cause a <strong>stack overflow</strong> and crash your browser window.</p>
+		</div>
+
+		<div class="slide">
 			<pre><code><c></c>for (var i = 0; i < 5; i++) {
-  console.log("This is the " + i + " loop.");
+  console.log(i);
 }</code></pre>
 		</div>
 
@@ -109,14 +114,14 @@
 			<pre><code>for (initialization; conditional; iteration;) {
   loop body;
 }</code></pre>
-			<p>This is essentially like copying and pasting the same piece of code five times, while changing a number or input.  Loops are an efficient way to excecute actions on a list or array of data.</p>
+			
 		</div>
 
 		<div class="slide">
 			<p>In many cases the initial condition will be the value <code>0</code> as in <code>var i = 0;</code> ("i" in this case is shorthand for <strong>index</strong>).</p>
 			<p>But our initial condition could be anything.</p>
 			<pre><code><c></c>for (var i = 1; i < 6; i++) {
-  console.log("This is the " + i + " loop.");
+  console.log(i);
 }</code></pre>
 			<pre><code><c></c>for (var i = 1, len = i + 5; i < len; i++) {
   console.log(i);
@@ -156,6 +161,63 @@ console.log(x);</code></pre>
         <div class="slide">
 			<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" target="blank">MDN Loops and Iteration</a></li>
 		</div>
+
+		<div class="slide">
+			<h2>Random</h2>
+			<p>Like the <note>array</note> object, JavaScript also has a <note>Math</note> global object, which contains basic methods for manipulating numbers.</p>
+			<p>We can use the Math object to generate random numbers.</p>
+			<ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="blank">Math</a></li></ul>
+		</div>
+		<div class="slide">
+			<p><code>Math.random()</code> generates a random number between 0 and 1.</p>
+			<pre><code><c></c>var n = Math.random();
+<c></c>console.log(n);
+<c></c>a[n];
+<c></c>a[0];</code></pre>
+		</div>
+
+		<div class="slide">
+			<p>Floating point numbers are not very useful for getting an element from an array, which indexes by ints.</p>
+			<p>We can use another Math method, <code>Math.floor()</code> to round the number down:</p>
+			<pre><code><c></c>var n = Math.floor(Math.Random());
+<c></c>console.log(n);
+<c></c>a[n];</code></pre>
+		</div>
+
+		<div class="slide">
+			<p>We need to adjust the range of our random values.  Instead of a number between 0 and 1, we want a number between 0 (the first index of the array) and the last index of the array, or <code>array.length</code></p>
+			<pre><code><c></c>var n = Math.floor(Math.random() * a.length));
+<c></c>console.log(n);
+<c></c>a[n];</code></pre>
+		</div>
+
+		<div class="slide">
+			<p>This is a common pattern in JavaScript.</p>
+			<pre><code><c></c>var a = ["cat", "dog", "alligator"];
+<c></c>a[Math.floor(Math.random() * a.length)];</code></pre>
+		</div>
+
+		<div class="slide">
+			<h2>Modulo</h2>
+			<p>JavaScript has a mathematical operator called <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()" target="blank">modulo</a> <code>%</code> which gives the remainder of a division of two values.</p>
+			<img src="js/modulo.png">
+		</div>
+		<div class="slide">
+			<pre><code><c></c>9 % 4;
+<c></c>5 % 4;
+<c></c>2 % 1;
+<c></c>1 % 2;
+<c></c>30 % 3;
+<c></c>31 % 3;
+<c></c>for (var i = 0; i < 20; i++) {
+	console.log(i % 5);
+}</code></pre>
+        </div>
+		<div class="slide">
+			<p>Notice that when we count up using modulo, we repeat the same count, even though <code>i</code> keeps going up.</p>
+			<p>This is useful for counting or flipping aspects of your program.</p>
+		</div>
+
 	</div>
 </body>
 </html>
