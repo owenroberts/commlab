@@ -31,44 +31,79 @@
 		</div>
 
 		<div class="slide">
-			<p>dot notation</p>
-			<pre>> var train = new Object();</pre>
-			<pre>> train.color = "silver";</pre>
-			<pre>> train.line = 1;</pre>
-			<pre>> train.speed = 100;</pre>
-			<pre>> train.maxPassengers = 100;</pre>
+			<h2>Dot notation</h2>
+			<pre><code><c></c>var train = {};</code></pre>
+			<p>Objects are declared with curly brackets.</p>
+			<pre><code><c></c>train.color = "blue";
+<c></c>train.speed = 100;
+<c></c>train.numberOfPassengers = 400;
+<c></c>train.distance = 25;
+<c></c>train.origin = "New York";
+<c></c>train.destination = "Boston";
+<c></c>console.log(train);</code></pre>
 		</div>
 		<div class="slide">
-			<p>So in a way, an Object is a model for the primary data structure of JavaScript.  It is how we organize and access information and functionality.</p>
+			<p>Objects are a model for the primary data structure of JavaScript.  It is how we organize and access information and functionality.</p>
 		</div>
 		<div class="slide">
-			<p>bracket notation</p>
-			<pre>> var anotherTrain = new Object();</pre>
-			<pre>> anotherTrain["color"] = "red";</pre>
-			<pre>> anotherTrain["line"] = "2";</pre>
+			<h2>Bracket notation</h2>
+			<pre><code><c></c>var anotherTrain = new Object();
+<c></c>anotherTrain["color"] = "red";
+<c></c>anotherTrain["line"] = "2";</code></pre>
 		</div>
 		<div class="slide">
 			<p>Any string can be used as an key or property name, and any variable can be saved in each property, a number, string, function, array, object or even null or "" (empty string).</p>
-			<p>Once we have objects we need ways to efficiently use their data.</p>
 		</div>
 		<div class="slide">
-			<p>Another, somewhat more efficient way to create an object is with object notation:</p>
-			<pre>> var yetAnotherTrain = {
-  color:"purple",
-  line:"6",
-  speed:150,
-  numPassengers: 300
-};</pre>
+			<h2>Object notation</h2>
+			<pre><code><c></c>var train = {
+	speed: 60,
+	numberOfPassengers: 500,
+	distance: 100,
+	origin: "Seattle",
+	destination: "San Francisco"
+};
+<c></c>console.log(train);</code></pre>
+
+		<div class="slide">
+			<h2>Object constructors</h2>
+			<p>Objects can be defined with contructor functions.</p>
+			<p>Per convention, constructor functions are named with capital letters, to distinguish them from other functions.</p>
+			<p>The keyword <code>new</code> is used to create a new object.</p>
 		</div>
+
+		<div class="slide">
+			<pre><code><c></c>function Train(speed, origin, destination) {
+	this.speed = speed;
+	this.origin = origin;
+	this.destination = destination;
+}
+<c></c>var lineNine = new Train(50, "Century Ave", "Xiaonanmen");</code></pre>
+		</div>
+
+		<div class="slide">
+			<p>The new object is referred to as an instance.</p>
+			<p>Each instance can be extended.</p>
+			<pre><code><c></c>lineNine.numPassengers = 100;</code></pre>
+		</div>
+		<div class="slide">
+			<p>The original contructor can be modified using the <code>.prototype</code> property.</p>
+			<pre><code><c></c>Train.prototype.color = null;
+<c></c>lineNine.color = "blue";</code></pre>
+		</div> 
+
+
+		<!--
 		<div class="slide">
 			<p><code>for ... in</code> is a for loop that will iterate over all of the keys in an object.</p>
 			<pre>> for (var prop in train) {
   console.log(prop);
   console.log(train[prop]);
 }</pre>
-
 		</div>
 
+
+		
 		<div class="slide">
 			<p>If we want to reuse the basic structure of an object we can use a constructor function.  JavaScript has some prebuilt constructor functions like <code>Math</code>.</p>
 			<p>Objects in JavaScript are like Classes in Processing.  They can be assigned properties and methods and extended in other objects. For example: </p>
@@ -103,7 +138,7 @@
 			<h2><code>this</code></h2>
 			<p>This is a special keyword used in JavaScript (as well as other languages) to refer to the current object.  
 		</div>
-
+		-->
 	</div>
 </body>
 </html>
