@@ -22,7 +22,7 @@
 			<p><a href="index.html">Notes Home</a></p>
 		</div>
 		<div class="slide">
-			<h2>Examples</h2>
+			<h2>Inspiration</h2>
 			<ul>
 				<li><a href="http://lossur.es/#/" target="blank">Los Sures</a></li>
 				<li><a href="http://www.thewildernessdowntown.com/" target="blank">Wilderness Downtown</a></li>
@@ -34,8 +34,210 @@
 			</ul>
 		</div>
 
+		<div class="slide">
+			<h2>Class examples</h2>
+			<ul>
+				<li><a href="http://192.168.50.184/~obr208/week9/" target="blank">Basic example</a></li>
+				<li><a href="http://192.168.50.184/~obr208/week9/scrub.html" target="blank">Scrub video</a></li>
+				<li><a href="http://192.168.50.184/~obr208/week9/interact.html" target="blank">Interactive video</a></li>
+				<li><a href="http://192.168.50.184/~obr208/week9/webcam.html" target="blank">Webcam</a> (On NAS this only works in Firefox :/)</li>
+				<li><a href="http://192.168.50.184/~obr208/week9/composite.html" target="blank">Composite</a></li>
+			</ul>
+		</div>
+
 		
 
+		<div class="slide">
+			<h2>Scrub video</h2>
+			<pre><code>var player = document.querySelector('video');
+
+var mouseX = 0;
+var videoDuration = 0;
+var width = window.innerWidth;
+
+document.addEventListener('mousemove', function(event) {
+	mouseX = event.offsetX;
+});
+
+function scrub() {
+	player.currentTime = ( mouseX / width ) * videoDuration;
+	window.requestAnimationFrame(scrub);
+}
+
+player.addEventListener('loadedmetadata', function(){
+	videoDuration = player.duration;
+	window.requestAnimationFrame(scrub);
+});</code></pre>
+		</div>
+
+		<div class="slide">
+			<h2>Interactive video</h2>
+			<pre><code>var player = document.querySelector('video');
+
+player.addEventListener('click', function(event) {
+	if (event.offsetX > this.offsetWidth/2) {
+		console.log("You clicked on the right side of the screen!");
+		player.src = "lion.mp4";
+	} else {
+		console.log("You clicked on the left side of the screen!");
+		player.src = "bird.mp4";
+	}
+});</code></pre>
+		</div>
+
+		<div class="slide">
+			<h2>Running a local server</h2>
+			<p>The next two examples require running a local server, because Chrome requires loading requests for things like the computer camera to come from the same server as the file requesting access.</p>
+			<p>Open Terminal</p>
+			<pre><code>$ cd ~/Desktop/class-comm/
+$ python -m SimpleHTTPServer</code></pre>
+			<p>That's it! Navitate to <a href="http://localhost:8000/" target="blank">localhost:8000</a></p>
+			<p>To run multiple servers:</p>
+			<pre><code>$ python -m SimpleHTTPServer 8001</code></pre>
+			<ul>
+				<li><code>~/</code> is the shortcut to your User folder on the Mac.  From here you can add Desktop, Documents, Downloads, etc. to the file path.</li>
+				<li><code>cd</code> stands for "change directory", which means open the folder at that path.  <code>cd ..</code> will go back one parent directory.</li>
+			</ul>
+		</div>
+
+		<div class="slide">
+			<p>If you hate knowing where things are on your computer, you can drag and drop:</p>
+			<video width="100%" controls>
+				<source src="video/terminal_2.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div class="slide">
+			<h2>Webcam</h2>
+			<pre><code>var webcam = document.querySelector('#webcam');
+
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+	 
+if (navigator.getUserMedia) { 
+	console.log(navigator);      
+    navigator.getUserMedia({video: true}, videoHandler, videoError);
+}
+
+function videoHandler(stream) {
+	webcam.src = window.URL.createObjectURL(stream);
+}
+function videoError(error) {
+	console.log(error);
+}
+</code></pre>
+		</div>
+
+		<div class="slide">
+			<h2>Mirror video with CSS</h2>
+			<pre><code>#webcam {
+	transform: rotateY(180deg);
+	-webkit-transform:rotateY(180deg); /* Safari and Chrome */
+	-moz-transform:rotateY(180deg); /* Firefox */
+}</code></pre>
+		</div>
+		
+		<div class="slide">
+			<h2>Capture video to canvas</h2>
+			<pre><code>var canvas = document.querySelector('canvas');
+var context = canvas.getContext('2d');
+var capture = document.querySelector('#capture');
+
+canvas.width = webcam.offsetWidth;
+canvas.height = webcam.offsetHeight;
+
+capture.addEventListener('click', function() {
+	context.save();
+	context.translate(canvas.width, 0);
+	context.scale(-1,1);
+	context.drawImage(webcam, 0, 0, canvas.width, canvas.height);
+	context.restore();
+});</code></pre>
+		</div>
+
+		<div class="slide">
+			<h2>Video compositor</h2>
+			<p>The <a href="video/videocompositor.js" target="blank">video compositor</a> library was developed by IMA professor Ben Moskowitz.</p>
+		</div>
+
+		<div class="slide">
+			<pre><code>var videocompositor;
+window.onload = function() {
+	var canvas = document.getElementById('canvas');
+	canvas.width = 640;
+	canvas.height = 360;
+	videocompositor = new VideoCompositor(canvas);
+
+	var playButton = document.querySelector('#play');
+	var pauseButton = document.querySelector('#pause');
+
+	pauseButton.addEventListener('click', function() {
+		videocompositor.pause();
+	});
+	
+
+	var playlist = {
+		"tracks":[
+                [
+                    {
+                        type:"video",
+                        id:"clip-1",
+                        src:"catgreenscreen.mp4",
+                        start:0,
+                        duration:120
+                    }
+                ],
+                [
+                    {
+                        type:"image",
+                        id:"bg-image",
+                        src:"apocalypse.jpg",
+                        start:4,
+                        duration:3
+                    },
+                    {
+                        type:"image",
+                        id:"bg-image2",
+                        src:"jungle.jpg",
+                        start:7,
+                        duration:3
+                    }
+                ]
+            ],
+		"effects": {
+			"greenscreen-effect": {
+                "inputs":["clip-1"],
+                "effect":VideoCompositor.Effects.GREENSCREEN,
+                "parameters":{
+                    "yLowerThreshold": 0.1,
+                    "yUpperThreshold": 1.0
+             	}
+        	}
+		}
+	};
+
+	videocompositor.playlist = playlist;
+	var visCanvas = document.getElementById('visualization-canvas');
+        visCanvas.width = 640;
+        visCanvas.height = 30;
+        VideoCompositor.renderPlaylist(playlist, visCanvas);
+
+    playButton.addEventListener('click', function() {
+		videocompositor.play();
+	});
+}</code></pre>
+		</div>
+
+		
+
+		<div class="slide">
+			<h2>Resources</h2>
+			<ul>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="blank">Canvas API</a></li>
+				<li><a href="https://developer.mozilla.org/en/docs/Web/API/Navigator/getUserMedia" target="blank">Navigator</a></li>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL" target="blank">URL.createObject</a></li>
+			</ul>
+		</div>
+	</div>
 		
 </body>
 </html>
