@@ -86,7 +86,7 @@ player.addEventListener('click', function(event) {
 		</div>
 
 		<div class="slide">
-			<h2>Running a local server</h2>
+			<h2 id="server">Running a local server</h2>
 			<p>The next two examples require running a local server, because Chrome requires loading requests for things like the computer camera to come from the same server as the file requesting access.</p>
 			<p>Open Terminal</p>
 			<pre><code>$ cd ~/Desktop/class-comm/
@@ -106,6 +106,20 @@ $ python -m SimpleHTTPServer</code></pre>
 				<source src="video/terminal_2.mp4" type="video/mp4">
 			</video>
 		</div>
+
+		<div class="slide">
+			<h2>Windows instructions</h2>
+			<p>Open Command Prompt</p>
+			<pre><code>> cd C:\Users\yourname\Documents\commlab\projectfolder
+> python -m http.server</code></pre>
+			<p>To detect the version of Python:</p>
+			<pre><code>> python -V</code></pre>
+			<p>If no version, download here: <a href="https://www.python.org/downloads/windows/" target="blank">https://www.python.org/downloads/windows/</a></p>
+			<p>If you have Python version 2, use the Mac command: <code>python -m SimpleHTTPServer</code></p>
+			<p><a href="https://www.youtube.com/watch?v=tV7TW-iK6GA" target="blank">Quick tutorial</a></p>
+		</div>
+
+		
 
 		<div class="slide">
 			<h2>Webcam</h2>
